@@ -4,14 +4,19 @@ import getDescriptionChart from 'utils/importDescriptionChart';
 import DetailedChart from 'components/detailedChart/detailedChart';
 import TemporaryDrawer from 'components/layout/mainLayout';
 import './App.css';
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import chartsList from 'utils/chartsList';
 
-function App() {
+
+const DefaultChartComponent = ({
+  module
+}) => {
   const [chartDescription, setChartDescription] = useState(undefined);
   const [chartProps, setChartProps] = useState(undefined);
 
   useEffect(() => {
     const importChartModule = async () => {
-      const { chartDescription, chartProps } = await getDescriptionChart("conoCircular");
+      const { chartDescription, chartProps } = await getDescriptionChart(module);
       setChartDescription(chartDescription);
       setChartProps(chartProps);
     }
@@ -20,7 +25,6 @@ function App() {
 
   return (
     <Grid>
-      <TemporaryDrawer />
       {
         chartDescription && chartProps && <DetailedChart
           description={chartDescription}
@@ -28,6 +32,39 @@ function App() {
         />
       }
     </Grid>
+  )
+}
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home :D</h1>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <TemporaryDrawer />
+      <Routes>
+        <Route
+          path={"/"}
+          element={<Home />}
+        />
+        {
+          chartsList.map((chart) => {
+            if (chart.defaultComponent) return (
+              <Route
+                key={chart.route}
+                path={chart.route}
+                element={<DefaultChartComponent module={chart.module} />}
+              />
+            )
+          })
+        }
+      </Routes>
+    </>
   );
 }
 

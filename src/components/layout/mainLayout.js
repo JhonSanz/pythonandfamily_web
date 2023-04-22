@@ -10,9 +10,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import chartsList from 'utils/chartsList';
+import { useNavigate } from "react-router-dom";
 
 const TemporaryDrawer = ({ }) => {
   const [state, setState] = React.useState(false);
+  const navigate = useNavigate();
   return (
     <Box>
       <Box>
@@ -41,10 +43,15 @@ const TemporaryDrawer = ({ }) => {
           onClick={() => setState(!state)}
         >
           <List>
+            <ListItem key={'Inicio'} disablePadding>
+              <ListItemButton onClick={() => navigate("/")}>
+                <ListItemText primary={'Inicio'} />
+              </ListItemButton>
+            </ListItem>
             {
               chartsList.map((item) => (
                 <ListItem key={item.listName} disablePadding>
-                  <ListItemButton>
+                  <ListItemButton onClick={() => navigate(item.route)}>
                     <ListItemText primary={item.listName} />
                   </ListItemButton>
                 </ListItem>

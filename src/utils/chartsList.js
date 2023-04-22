@@ -1,5 +1,5 @@
 const chartsList = [
-  { listName: "Cono cirular", module: "conoCircular", route: "circular-cone" },
+  { listName: "Cono cirular", module: "conoCircular", route: "circular-cone", defaultComponent: true },
 ];
 
 export default chartsList;
