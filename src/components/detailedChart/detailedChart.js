@@ -10,14 +10,35 @@ export default function DetailedChart({
   const { data, layout } = chartProps;
 
   return (
-    <Grid container spacing={2} justifyContent={"center"} alignItems={"center"} height={"100vh"}>
-      <Grid item xs={4} sx={{ paddingLeft: "50px !important" }}>
+    <Grid
+      container
+      spacing={2}
+      justifyContent={"center"}
+      alignItems={"center"}
+      height={"100vh"}
+    >
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={4}
+        sx={{ paddingLeft: "50px !important" }}
+      >
         {description}
       </Grid>
-      <Grid item xs={8} textAlign={"center"} height={"100%"} width={"100%"} alignItems={"center"} display={"flex"}>
+      <Grid
+        item
+        xs={12} sm={12} md={8}
+        textAlign={"center"}
+        height={"100%"}
+        width={"100%"}
+        alignItems={"center"}
+        display={"flex"}
+      >
         <Plot
           data={data}
           layout={{
+            ...layout,
             margin: {
               l: 0,
               r: 0,
