@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import chartsList from 'utils/chartsList';
 import { useNavigate } from "react-router-dom";
 
-const TemporaryDrawer = ({ }) => {
+const TemporaryDrawer = () => {
   const [state, setState] = React.useState(false);
   const navigate = useNavigate();
   return (

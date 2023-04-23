@@ -4,7 +4,7 @@ import getDescriptionChart from 'utils/importDescriptionChart';
 import DetailedChart from 'components/detailedChart/detailedChart';
 import TemporaryDrawer from 'components/layout/mainLayout';
 import './App.css';
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import chartsList from 'utils/chartsList';
 
 
@@ -21,7 +21,7 @@ const DefaultChartComponent = ({
       setChartProps(chartProps);
     }
     importChartModule();
-  }, []);
+  });
 
   return (
     <Grid>
@@ -61,6 +61,7 @@ function App() {
                 element={<DefaultChartComponent module={chart.module} />}
               />
             )
+            return <></>;
           })
         }
       </Routes>
