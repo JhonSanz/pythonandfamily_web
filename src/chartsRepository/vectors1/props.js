@@ -37,6 +37,10 @@ const generate_LineCoords = (lineCoords) => {
 }
 
 const data = [
+  {
+    'type': 'scatter3d', 'mode': 'lines+text', 'text': 'O', 'textposition': 'middle left',
+    'x': [0], 'y': [0], 'z': [0]
+  },
   ...lines.map((lineCoords) => generateConeCoords(lineCoords)).filter(item => item !== undefined),
   ...lines.map((lineCoords) => generate_LineCoords(lineCoords)),
 ]
