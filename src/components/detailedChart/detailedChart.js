@@ -22,7 +22,7 @@ export default function DetailedChart({
         xs={12}
         sm={12}
         md={4}
-        sx={{ paddingLeft: "50px !important" }}
+        sx={{ padding: "50px !important", paddingBottom: "5px !important"}}
       >
         {description}
       </Grid>
@@ -49,8 +49,17 @@ export default function DetailedChart({
             title: 'Cono circular',
             autosize: true
           }}
-          config={{ autosizable: true, responsive: true }}
-          style={{ width: '100%', height: '100%' }}
+          config={{
+            autosizable: true, responsive: true,
+            displaylogo: false,
+            modeBarButtonsToRemove: [
+              "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews",
+              "toImage", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox",
+              "zoom3d", "pan3d", "orbitRotation", "tableRotation", "handleDrag3d",
+              "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d"
+            ]
+          }}
+          style={{ width: '100%', height: '80%' }}
         />
       </Grid>
     </Grid>

@@ -26,7 +26,7 @@ const generate_LineCoords = (lineCoords) => {
   const { x, y, z, color, name } = lineCoords;
   return {
     'type': 'scatter3d', 'mode': 'lines+text', 'name': name,
-    'textposition': 'middle left',
+    'textposition': 'middle left', 'showlegend': false,
     'text': name,
     'x': x, 'y': y, 'z': z,
     'line': {
@@ -39,7 +39,7 @@ const generate_LineCoords = (lineCoords) => {
 const data = [
   {
     'type': 'scatter3d', 'mode': 'lines+text', 'text': 'O', 'textposition': 'middle left',
-    'x': [0], 'y': [0], 'z': [0]
+    'x': [0], 'y': [0], 'z': [0], 'showlegend': false,
   },
   ...lines.map((lineCoords) => generateConeCoords(lineCoords)).filter(item => item !== undefined),
   ...lines.map((lineCoords) => generate_LineCoords(lineCoords)),
