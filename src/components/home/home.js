@@ -6,9 +6,9 @@ const Home = () => {
   return (
     <Grid container p={5}>
       <Grid item xs={12}>
-        <h1>Welcome to math.pythonandfamily.com!</h1><hr />
+        <h1>Welcome</h1><hr />
       </Grid>
-      <Grid item xs={12} sm={12} md={6} p={5} >
+      <Grid item xs={12} sm={12} md={6} p={1} >
         <Card sx={{ minHeight: "310px" }}>
           <CardContent>
             <h3>What is this web about?</h3>
@@ -17,7 +17,7 @@ const Home = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12} sm={12} md={6} p={5} >
+      <Grid item xs={12} sm={12} md={6} p={1} >
         <Card sx={{ minHeight: "310px" }}>
           <CardContent>
             <h3>Why is this important?</h3>
