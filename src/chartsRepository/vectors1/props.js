@@ -1,3 +1,5 @@
+import { generateConeCoords, generate_LineCoords } from 'utils/generateVector';
+
 const lines = [
   { x: [3, 8], y: [3, 8], z: [3, 10], cone: false, color: "green", name: 'E' },
   { x: [3, 4], y: [3, 4], z: [3, 8], cone: true, color: "blue", name: 'A' },
@@ -5,36 +7,6 @@ const lines = [
   { x: [4, 8], y: [4, 8], z: [8, 10], cone: false, color: "red", name: '' },
   { x: [7, 8], y: [7, 8], z: [5, 10], cone: false, color: "blue", name: '' },
 ];
-
-const generateConeCoords = (lineCoords) => {
-  const { x, y, z, cone, color } = lineCoords;
-  if (cone) {
-    return {
-      'type': 'cone', 'showscale': false,
-      'color': color,
-      x: [x[1]],
-      y: [y[1]],
-      z: [z[1]],
-      u: [0.2 * (x[1] - x[0])],
-      v: [0.2 * (y[1] - y[0])],
-      w: [0.2 * (z[1] - z[0])],
-    }
-  }
-}
-
-const generate_LineCoords = (lineCoords) => {
-  const { x, y, z, color, name } = lineCoords;
-  return {
-    'type': 'scatter3d', 'mode': 'lines+text', 'name': name,
-    'textposition': 'middle left', 'showlegend': false,
-    'text': name,
-    'x': x, 'y': y, 'z': z,
-    'line': {
-      'width': 6,
-      'color': color
-    },
-  }
-}
 
 const data = [
   {

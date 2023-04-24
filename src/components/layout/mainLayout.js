@@ -44,9 +44,9 @@ const TemporaryDrawer = ({
           onClick={() => setState(!state)}
         >
           <List>
-            <ListItem key={'Inicio'} disablePadding>
+            <ListItem key={'Home'} disablePadding>
               <ListItemButton onClick={() => navigate("/")}>
-                <ListItemText primary={'Inicio'} />
+                <ListItemText primary={'Home'} />
               </ListItemButton>
             </ListItem>
             {
