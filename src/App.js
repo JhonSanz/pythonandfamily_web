@@ -6,19 +6,22 @@ import TemporaryDrawer from 'components/layout/mainLayout';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import chartsList from 'utils/chartsList';
-
+import CircularProgress from '@mui/material/CircularProgress';
+import Home from 'components/home/home';
 
 const DefaultChartComponent = ({
   module
 }) => {
   const [chartDescription, setChartDescription] = useState(undefined);
   const [chartProps, setChartProps] = useState(undefined);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const importChartModule = async () => {
       const { chartDescription, chartProps } = await getDescriptionChart(module);
       setChartDescription(chartDescription);
       setChartProps(chartProps);
+      setReady(true);
     }
     importChartModule();
   });
@@ -26,20 +29,19 @@ const DefaultChartComponent = ({
   return (
     <Grid>
       {
-        chartDescription && chartProps && <DetailedChart
+        !ready && (
+          <Grid justifyContent="center" display={"flex"} alignItems="center" height={"100vh"}>
+            <CircularProgress />
+          </Grid>
+        )
+      }
+      {
+        ready && chartDescription && chartProps && <DetailedChart
           description={chartDescription}
           chartProps={chartProps}
         />
       }
     </Grid>
-  )
-}
-
-const Home = () => {
-  return (
-    <div>
-      <h1>Home :D</h1>
-    </div>
   )
 }
 
