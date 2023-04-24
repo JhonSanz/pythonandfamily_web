@@ -1,4 +1,6 @@
 import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import Plotly from 'plotly.js-gl3d-dist-min';
 import createPlotlyComponent from 'react-plotly.js/factory';
 const Plot = createPlotlyComponent(Plotly);
@@ -7,7 +9,7 @@ export default function DetailedChart({
   description,
   chartProps
 }) {
-  const { data, layout } = chartProps;
+  const { data, layout, chartTile } = chartProps;
 
   return (
     <Grid
@@ -22,13 +24,19 @@ export default function DetailedChart({
         xs={12}
         sm={12}
         md={4}
-        sx={{ padding: "50px !important", paddingBottom: "5px !important"}}
+        lg={5}
       >
-        {description}
+        <Card
+          sx={{ margin: 2 }}
+        >
+          <CardContent>
+            {description}
+          </CardContent>
+        </Card>
       </Grid>
       <Grid
         item
-        xs={12} sm={12} md={8}
+        xs={12} sm={12} md={8} lg={7}
         textAlign={"center"}
         height={"100%"}
         width={"100%"}
@@ -46,8 +54,13 @@ export default function DetailedChart({
               t: 0,
               pad: 0
             },
-            title: 'Cono circular',
-            autosize: true
+            title: {
+              text: chartTile,
+              pad: { t: 10, l: 10 },
+              x: 0, y: 1
+            },
+            autosize: true,
+            paper_bgcolor: '#fdfdfd'
           }}
           config={{
             autosizable: true, responsive: true,

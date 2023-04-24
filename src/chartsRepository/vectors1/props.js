@@ -15,9 +15,9 @@ const generateConeCoords = (lineCoords) => {
       x: [x[1]],
       y: [y[1]],
       z: [z[1]],
-      u: [0.1 * (x[1] - x[0])],
-      v: [0.1 * (y[1] - y[0])],
-      w: [0.1 * (z[1] - z[0])],
+      u: [0.2 * (x[1] - x[0])],
+      v: [0.2 * (y[1] - y[0])],
+      w: [0.2 * (z[1] - z[0])],
     }
   }
 }
@@ -48,10 +48,12 @@ const data = [
 const layout = {
   'scene': {
     'camera': {
-      'eye': { 'x': -0.76, 'y': 1.8, 'z': 0.92 }
+      'eye': { 'x': 1, 'y': -1.8, 'z': 0.92 }
     }
   },
 }
 
-const chartProps = { data, layout }
+const chartTile = "Parallelogram law";
+
+const chartProps = { data, layout, chartTile }
 export default chartProps;
