@@ -46,13 +46,15 @@ const DefaultChartComponent = ({
 }
 
 function App() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <TemporaryDrawer />
+      <TemporaryDrawer state={open} setState={setOpen} />
       <Routes>
         <Route
           path={"/"}
-          element={<Home />}
+          element={<Home setOpen={setOpen} />}
         />
         {
           chartsList.map((chart) => {
