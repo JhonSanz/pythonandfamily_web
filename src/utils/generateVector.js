@@ -15,7 +15,7 @@ const generateConeCoords = (lineCoords) => {
 }
 
 const generate_LineCoords = (lineCoords) => {
-  const { x, y, z, color, name } = lineCoords;
+  const { x, y, z, color, name, dotted } = lineCoords;
   return {
     'type': 'scatter3d', 'mode': 'lines+text', 'name': name,
     'textposition': 'middle left', 'showlegend': false,
@@ -23,7 +23,8 @@ const generate_LineCoords = (lineCoords) => {
     'x': x, 'y': y, 'z': z,
     'line': {
       'width': 6,
-      'color': color
+      'color': color,
+      'dash': dotted ? 'dashdot' : 'solid',
     },
   }
 }
