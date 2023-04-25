@@ -1,11 +1,11 @@
 import { generateConeCoords, generate_LineCoords } from 'utils/generateVector';
 
 const lines = [
-  { x: [3, 8], y: [3, 8], z: [3, 10], cone: false, color: "green", name: 'E', dotted: false },
-  { x: [3, 4], y: [3, 4], z: [3, 8], cone: true, color: "blue", name: 'A', dotted: false },
-  { x: [3, 7], y: [3, 7], z: [3, 5], cone: true, color: "red", name: 'B', dotted: false },
-  { x: [4, 8], y: [4, 8], z: [8, 10], cone: false, color: "red", name: '', dotted: true },
-  { x: [7, 8], y: [7, 8], z: [5, 10], cone: false, color: "blue", name: '', dotted: true },
+  { x: [3, 8], y: [3, 8], z: [3, 10], cone: false, color: "#388e3c", name: 'E', dotted: false },
+  { x: [3, 4], y: [3, 4], z: [3, 8], cone: true, color: "#1976d3", name: 'A', dotted: false },
+  { x: [3, 7], y: [3, 7], z: [3, 5], cone: true, color: "#e64a19", name: 'B', dotted: false },
+  { x: [4, 8], y: [4, 8], z: [8, 10], cone: false, color: "#e64a19", name: '', dotted: true },
+  { x: [7, 8], y: [7, 8], z: [5, 10], cone: false, color: "#1976d3", name: '', dotted: true },
 ];
 
 const data = [
