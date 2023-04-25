@@ -48,6 +48,7 @@ export default function DetailedChart({
       >
         <Card
           sx={{ margin: 2 }}
+          elevation={3}
         >
           <CardContent>
             {miniDescription}
@@ -90,7 +91,7 @@ export default function DetailedChart({
               x: 0, y: 1
             },
             autosize: true,
-            paper_bgcolor: '#fdfdfd'
+            // paper_bgcolor: '#fdfdfd'
           }}
           config={{
             autosizable: true, responsive: true,
@@ -102,7 +103,7 @@ export default function DetailedChart({
               "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d"
             ]
           }}
-          style={{ width: '100%', height: '80%' }}
+          style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}
         />
       </Grid>
       <div>

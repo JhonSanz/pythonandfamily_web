@@ -1,7 +1,8 @@
 html,
 body {
     margin: 0;
-    font-family: 'Roboto'
+    font-family: 'Roboto';
+    background-image: url("img/background.jpg");
 }
 
 .chartCardDescription {
