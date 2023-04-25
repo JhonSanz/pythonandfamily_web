@@ -12,13 +12,15 @@ import Home from 'components/home/home';
 const DefaultChartComponent = ({
   module
 }) => {
+  const [chartMiniDescription, setChartMiniDescription] = useState(undefined);
   const [chartDescription, setChartDescription] = useState(undefined);
   const [chartProps, setChartProps] = useState(undefined);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const importChartModule = async () => {
-      const { chartDescription, chartProps } = await getDescriptionChart(module);
+      const { chartDescription, chartProps, chartMiniDescription } = await getDescriptionChart(module);
+      setChartMiniDescription(chartMiniDescription);
       setChartDescription(chartDescription);
       setChartProps(chartProps);
       setReady(true);
@@ -37,6 +39,7 @@ const DefaultChartComponent = ({
       }
       {
         ready && chartDescription && chartProps && <DetailedChart
+          miniDescription={chartMiniDescription}
           description={chartDescription}
           chartProps={chartProps}
         />

@@ -1,6 +1,6 @@
 var Latex = require('react-latex');
 
-const description = <div className='chartCardDescription'>
+const description = <div>
   <p>Let's check two important operations we can perform with vectors, and one of the most used theorems.</p>
   <p><b>Definition</b>: Given <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>scalar/dot product</b> is</p>
   <Latex>{"$A \\cdot B = \\displaystyle\\sum_1^k a_k b_k$"}</Latex>
@@ -19,4 +19,14 @@ const description = <div className='chartCardDescription'>
   <p>Let's think a litte. How can I ensure that both vectors are <b>in the same direction</b>?. Here we can use one of the vectors' properties. If we multiply by a constant <Latex>{"$X$"}</Latex> we are going to have a different vector in the same direction, as we can see in our chart.</p>
 </div>
 
-export default description;
+const miniDescription = <div>
+  <p>Let's check two important operations we can perform with vectors, and one of the most used theorems.</p>
+  <p><b>Definition</b>: Given <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>scalar/dot product</b> is</p>
+  <Latex>{"$A \\cdot B = \\displaystyle\\sum_1^k a_k b_k$"}</Latex>
+  <p><b>Definition</b>: Given <Latex>{"$A$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>vector norm</b> is</p>
+  <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> and we know that<br />
+  <Latex>{"$A \\cdot A = \\displaystyle\\sum_1^k a_k a_k = a_1^2 + a_2^2 + ... + a_k^2$"}</Latex> so we can replace <br />
+  <Latex>{"$\\lVert A \\rVert = \\sqrt{A \\cdot A}$"}</Latex>
+</div>
+
+export { description, miniDescription };

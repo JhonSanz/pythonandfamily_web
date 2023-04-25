@@ -7,4 +7,9 @@ const description = <div>
   </p>
 </div>
 
-export default description;
+
+const miniDescription = <div>
+  <h1>test</h1>
+</div>
+
+export { description, miniDescription };

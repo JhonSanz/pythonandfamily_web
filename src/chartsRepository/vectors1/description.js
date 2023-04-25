@@ -1,6 +1,6 @@
 var Latex = require('react-latex');
 
-const description = <div className='chartCardDescription'>
+const description = <div>
   <p>Vectors are represented as oriented segments or arrows. Their operations are expressed based in their components
     <Latex>{"$(a_{1}, a_{2}, ... , a_{n})$"}</Latex>.</p>
   <p>The set of n-dimentional vectors is named <b>vectorial space</b>, designed with <Latex>{"$V_{n}$"}</Latex></p>
@@ -31,4 +31,15 @@ const description = <div className='chartCardDescription'>
   <p>We could use and practice with vectors' properties, and we learnt about the parallelogram law.</p>
 </div>
 
-export default description;
+const miniDescription = <div>
+  <p>Vectors are represented as oriented segments or arrows. Their operations are expressed based in their components
+    <Latex>{"$(a_{1}, a_{2}, ... , a_{n})$"}</Latex>.</p>
+  <p>The set of n-dimentional vectors is named <b>vectorial space</b>, designed with <Latex>{"$V_{n}$"}</Latex></p>
+  <p><b>Definition</b>: Given <Latex>{"$A, B$"}</Latex> in <Latex>{"$V_{n}$"}</Latex></p>
+  <Latex>{"$A = B$"}</Latex> if <Latex>{"$a_{1} = b_{1}, a_{2} = b_{2}, a_{n} = b_{n}$"}</Latex><br />
+  <Latex>{"$A + B = (a_{1} + b_{1}, a_{2} + b_{2}, a_{n} + b_{n})$"}</Latex><br />
+  <Latex>{"$cA = (ca_{1}, ca_{2}, ... , ca_{n})$"}</Latex> with c as scalar value.
+  <br />
+</div>
+
+export { description, miniDescription };
