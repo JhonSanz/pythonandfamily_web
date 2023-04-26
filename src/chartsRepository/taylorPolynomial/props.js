@@ -110,6 +110,7 @@ const DataManager = (setmanagedData, count, setCount) => {
 const layout = {
   yaxis: { range: [-4, 8] },
   xaxis: { range: [-4, 4] },
+  legend: { "orientation": "h", "xanchor": "center", "x": 0.5, "y": 0 },
 }
 const chartTile = "Taylor polynomial";
 
