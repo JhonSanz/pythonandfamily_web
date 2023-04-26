@@ -28,8 +28,9 @@ export default function DetailedChart({
   description,
   chartProps
 }) {
-  const { data, layout, chartTile } = chartProps;
+  const { data, layout, chartTile, DataManager } = chartProps;
   const [open, setOpen] = useState(false);
+  const [managedData, setmanagedData] = useState(data);
 
   return (
     <Grid
@@ -52,6 +53,7 @@ export default function DetailedChart({
         >
           <CardContent>
             {miniDescription}
+            {DataManager !== undefined  && DataManager(setmanagedData)}
             <br />
             <div style={{ display: "flex", justifyContent: "end" }}>
               <Button
@@ -75,7 +77,7 @@ export default function DetailedChart({
         display={"flex"}
       >
         <Plot
-          data={data}
+          data={managedData || data}
           layout={{
             ...layout,
             margin: {
@@ -97,6 +99,9 @@ export default function DetailedChart({
             autosizable: true, responsive: true,
             displaylogo: false,
             modeBarButtonsToRemove: [
+              // "zoom2d", "pan2d",
+              "select2d", "lasso2d", "zoomIn2d",
+              "zoomOut2d", "autoScale2d", "resetScale2d",
               "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews",
               "toImage", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox",
               "zoom3d", "pan3d", "orbitRotation", "tableRotation", "handleDrag3d",
