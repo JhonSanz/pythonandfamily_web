@@ -31,6 +31,7 @@ export default function DetailedChart({
   const { data, layout, chartTile, DataManager } = chartProps;
   const [open, setOpen] = useState(false);
   const [managedData, setmanagedData] = useState(data);
+  const [count, setCount] = useState(data.length);
 
   return (
     <Grid
@@ -53,7 +54,7 @@ export default function DetailedChart({
         >
           <CardContent>
             {miniDescription}
-            {DataManager !== undefined  && DataManager(setmanagedData)}
+            {DataManager !== undefined  && DataManager(setmanagedData, count, setCount)}
             <br />
             <div style={{ display: "flex", justifyContent: "end" }}>
               <Button
@@ -77,7 +78,7 @@ export default function DetailedChart({
         display={"flex"}
       >
         <Plot
-          data={managedData || data}
+          data={DataManager === undefined ? data : managedData}
           layout={{
             ...layout,
             margin: {

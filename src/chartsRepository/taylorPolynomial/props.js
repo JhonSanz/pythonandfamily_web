@@ -74,9 +74,7 @@ const addTerm = (count) => {
   return [data[0], data[count]];
 }
 
-
-const DataManager = (setmanagedData) => {
-  const [count, setCount] = useState(data.length);
+const DataManager = (setmanagedData, count, setCount) => {
   return (
     <div>
       <button
