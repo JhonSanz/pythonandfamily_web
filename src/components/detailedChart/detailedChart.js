@@ -120,7 +120,8 @@ export default function DetailedChart({
         alignItems={"center"}
         display={"flex"}
       >
-        <div id="plot_div" style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}></div>
+        <div id="plot_div" style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}>
+        </div>
       </Grid>
       <div>
         <Modal

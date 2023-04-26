@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const x = [];
 const exp = [];
@@ -77,32 +78,50 @@ const addTerm = (count) => {
 const DataManager = (setmanagedData, count, setCount) => {
   return (
     <div>
-      <button
-        onClick={() => {
-          if (count > 0) {
-            setmanagedData(removeTerm(count - 1))
-            setCount(count - 1);
-          }
-        }}
-      >-</button>
-      <button onClick={() => {
-        setmanagedData([data[0]]);
-        setCount(0);
-      }}
-      >reset</button>
-      <button onClick={() => {
-        setmanagedData(data);
-        setCount(data.length);
-      }}
-      >all</button>
-      <button
-        onClick={() => {
-          if (count < (data.length - 1)) {
-            setmanagedData(addTerm(count + 1))
-            setCount(count + 1);
-          }
-        }}
-      >+</button>
+      <ButtonGroup variant="contained" aria-label="outlined primary button group">
+        <Button
+          size="small"
+          onClick={() => {
+            if (count > 0) {
+              setmanagedData(removeTerm(count - 1))
+              setCount(count - 1);
+            }
+          }}
+        >
+          -
+        </Button>
+        <Button
+          color="secondary"
+          size="small"
+          onClick={() => {
+            setmanagedData([data[0]]);
+            setCount(0);
+          }}
+        >
+          reset
+        </Button>
+        <Button
+          color="success"
+          size="small"
+          onClick={() => {
+            setmanagedData(data);
+            setCount(data.length);
+          }}
+        >
+          all
+        </Button>
+        <Button
+          size="small"
+          onClick={() => {
+            if (count < (data.length - 1)) {
+              setmanagedData(addTerm(count + 1))
+              setCount(count + 1);
+            }
+          }}
+        >
+          +
+        </Button>
+      </ButtonGroup>
     </div >
   )
 }
