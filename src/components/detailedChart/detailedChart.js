@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -30,8 +30,51 @@ export default function DetailedChart({
 }) {
   const { data, layout, chartTile, DataManager } = chartProps;
   const [open, setOpen] = useState(false);
-  const [managedData, setmanagedData] = useState(data);
+  const [initialData, setIinitialData] = useState([]);
+  const [managedData, setmanagedData] = useState(undefined);
   const [count, setCount] = useState(data.length);
+
+  useEffect(() => {
+    setIinitialData(data);
+    setmanagedData(DataManager !== undefined ? data : undefined);
+  }, [data])
+
+  useEffect(() => {
+    Plotly.react(
+      'plot_div',
+      managedData || initialData,
+      {
+        ...layout,
+        margin: {
+          l: 0,
+          r: 0,
+          b: 0,
+          t: 0,
+          pad: 0
+        },
+        title: {
+          text: chartTile,
+          pad: { t: 10, l: 10 },
+          x: 0, y: 1
+        },
+        autosize: true,
+        // paper_bgcolor: '#fdfdfd'
+      },
+      {
+        autosizable: true, responsive: true,
+        displaylogo: false,
+        modeBarButtonsToRemove: [
+          // "zoom2d", "pan2d",
+          "select2d", "lasso2d", "zoomIn2d",
+          "zoomOut2d", "autoScale2d", "resetScale2d",
+          "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews",
+          "toImage", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox",
+          "zoom3d", "pan3d", "orbitRotation", "tableRotation", "handleDrag3d",
+          "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d"
+        ]
+      }
+    );
+  }, [initialData, managedData])
 
   return (
     <Grid
@@ -54,7 +97,7 @@ export default function DetailedChart({
         >
           <CardContent>
             {miniDescription}
-            {DataManager !== undefined  && DataManager(setmanagedData, count, setCount)}
+            {DataManager !== undefined && DataManager(setmanagedData, count, setCount)}
             <br />
             <div style={{ display: "flex", justifyContent: "end" }}>
               <Button
@@ -77,40 +120,7 @@ export default function DetailedChart({
         alignItems={"center"}
         display={"flex"}
       >
-        <Plot
-          data={DataManager === undefined ? data : managedData}
-          layout={{
-            ...layout,
-            margin: {
-              l: 0,
-              r: 0,
-              b: 0,
-              t: 0,
-              pad: 0
-            },
-            title: {
-              text: chartTile,
-              pad: { t: 10, l: 10 },
-              x: 0, y: 1
-            },
-            autosize: true,
-            // paper_bgcolor: '#fdfdfd'
-          }}
-          config={{
-            autosizable: true, responsive: true,
-            displaylogo: false,
-            modeBarButtonsToRemove: [
-              // "zoom2d", "pan2d",
-              "select2d", "lasso2d", "zoomIn2d",
-              "zoomOut2d", "autoScale2d", "resetScale2d",
-              "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews",
-              "toImage", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox",
-              "zoom3d", "pan3d", "orbitRotation", "tableRotation", "handleDrag3d",
-              "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d"
-            ]
-          }}
-          style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}
-        />
+        <div id="plot_div" style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}></div>
       </Grid>
       <div>
         <Modal
