@@ -11,22 +11,22 @@ const description = <div>
     <tr>
       <td>1. </td>
       <td><Latex>{"$f^{(0)}(x) = e^{x}$"}</Latex></td>
-      <td><Latex>{"$p^{(0)}(x) =  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ... +$"}</Latex></td>
+      <td><Latex>{"$p^{(0)}(x) =  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ...$"}</Latex></td>
     </tr>
     <tr>
       <td>2. </td>
       <td><Latex>{"$f^{(1)}(x) = e^{x}$"}</Latex></td>
-      <td><Latex>{"$p^{(1)}(x) = 0 +  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ... +$"}</Latex></td>
+      <td><Latex>{"$p^{(1)}(x) = 0 +  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ...$"}</Latex></td>
     </tr>
     <tr>
       <td>3. </td>
       <td><Latex>{"$f^{(2)}(x) = e^{x}$"}</Latex></td>
-      <td><Latex>{"$p^{(2)}(x) = 0 + 0 +  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ... +$"}</Latex></td>
+      <td><Latex>{"$p^{(2)}(x) = 0 + 0 +  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ...$"}</Latex></td>
     </tr>
     <tr>
       <td>4. </td>
       <td><Latex>{"$f^{(3)}(x) = e^{x}$"}</Latex></td>
-      <td><Latex>{"$p^{(3)}(x) = 0 + 0 + 0 +  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ... +$"}</Latex></td>
+      <td><Latex>{"$p^{(3)}(x) = 0 + 0 + 0 +  1 + \\frac{x^2}{2!} + \\frac{x^3}{3!} + ...$"}</Latex></td>
     </tr>
   </table>
   <p>
