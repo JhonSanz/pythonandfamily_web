@@ -1,3 +1,4 @@
+import FormulaTable from 'utils/formulaTable';
 var Latex = require('react-latex');
 
 const description = <div>
@@ -31,24 +32,57 @@ const description = <div>
   </div>
   <p>
     This is great. As you can see all derivates are giving us the same function for both <Latex>{"$f(x)$"}</Latex> and <Latex>{"$p(x)$"}</Latex> I mean: <br /><br />
-    <Latex>{"$f^{(k)}(x) = f(x) \\ \\forall \\ k = 1, 2, 3 ... $"}</Latex> <br />
-    <Latex>{"$p^{(k)}(x) = p(x) \\ \\forall \\ k = 1, 2, 3 ... $"}</Latex>
+    <FormulaTable data={[
+      "$f^{(k)}(x) = f(x) \\ \\forall \\ k = 1, 2, 3 ... $",
+      "$p^{(k)}(x) = p(x) \\ \\forall \\ k = 1, 2, 3 ... $",
+    ]} />
   </p>
   <p>
     Now let's evaluate  <Latex>{"$x = 0$"}</Latex><br /><br />
-    <Latex>{"$f^{(k)}(0) = 1 \\ \\forall \\ k = 1, 2, 3 ... $"}</Latex> <br />
-    <Latex>{"$p^{(k)}(0) = 1 \\ \\forall \\ k = 1, 2, 3 ... $"}</Latex>, so: <br />
-    <Latex>{"$p^{(k)}(0) = f^{(k)}(0) \\ \\forall \\ k = 1, 2, 3 ... $"}</Latex>
+    <FormulaTable data={[
+      "$f^{(k)}(0) = 1 \\ \\forall \\ k = 1, 2, 3 ... $",
+      "$p^{(k)}(0) = 1 \\ \\forall \\ k = 1, 2, 3 ... $",
+      "$p^{(k)}(0) = f^{(k)}(0) \\ \\forall \\ k = 1, 2, 3 ... \\ $ so:",
+    ]} />
   </p>
   <p>
     Those functions <b>are essentially the same</b>. Now in general, <b>we are trying to find</b> a polynomial <Latex>{"$p$"}</Latex> wich matches with <Latex>{"$f$"}</Latex> and its first <Latex>{"$n$"}</Latex> derivates in <Latex>{"$x = 0$"}</Latex> (as we did previously with <Latex>{"$f(x) = e^{x}$"}</Latex>), so:<br /><br />
-    <Latex>{"$f^{(0)}(0) = p^{(0)}(0)$"}</Latex><br />
-    <Latex>{"$f^{(1)}(0) = p^{(1)}(0)$"}</Latex><br />
-    <Latex>{"$f^{(n)}(0) = p^{(n)}(0) \\ \\forall \\ n = 1, 2, 3 ... $"}</Latex><br />
+    <FormulaTable data={[
+      "$f^{(0)}(0) = p^{(0)}(0)$",
+      "$f^{(1)}(0) = p^{(1)}(0)$",
+      "$f^{(n)}(0) = p^{(n)}(0) \\ \\forall \\ n = 1, 2, 3 ... $",
+    ]} />
   </p>
-  <p>The polynomial is... yes, is this:</p>
-  <Latex>{"$p(x) = c_0 + c_1x + c_2x^2 + ... + c_nx^n$"}</Latex><br />
-
+  <p>The polynomial is... yes, it's this:</p>
+  <FormulaTable data={[
+    "$p(x) = c_0 + c_1x + c_2x^2 + ... + c_nx^n$"
+  ]} />
+  <p>Let's make the same proccess</p>
+  <FormulaTable data={[
+    "$p^{(1)}(x) = 0 + c_1 + 2c_2x + 3c_3x^2 + ...$",
+    "$p^{(2)}(x) = 0 + 0 + 2c_2 + 6c_3x + ...$",
+    "$p^{(4)}(x) = 0 + 0 + 0 + 6c_3 + ...$",
+  ]} />
+  <p>And if we evaluate them in <Latex>{"$x = 0$"}</Latex> we will get</p>
+  <FormulaTable data={[
+    "$p^{(1)}(0) = c_1$",
+    "$p^{(2)}(0) = 2c_2$",
+    "$p^{(3)}(0) = 6c_3$, and in general",
+    "$p^{(k)}(0) = k!c_k$, we know $p^{(k)}(0) = f^{(k)}(0)$",
+    "$c_k = \\frac {f^{(k)}(0)}{k!}$",
+  ]} />
+  <p>Great!, we found something important. Thanks to this reasoning we could find how to generate our polynomial with the constants which satisfy the <Latex>{"$n + 1$"}</Latex> initial conditions. So let's go ahead and write the Taylor Polynomial</p>
+  <FormulaTable data={[
+    "$P(x) = \\displaystyle\\sum_0^k \\frac {f^{(k)}(0)}{k!}x^k$"
+  ]} />
+  <p>Finally, for convenience we will define the Taylor Operator, to make explicit how our Taylor polynomial depends on our original and <Latex>{"$n$"}</Latex>. It is being applied to a function, and it will return a new function <Latex>{"$T_nf$"}</Latex>, the Taylor Polynomial grade <Latex>{"$n$"}</Latex>.</p>
+  <FormulaTable data={[
+    "$P = T_nf \\ $ or $\\ P = T_n(f)$"
+  ]} />
+  <p>Let's use it to generate our example with <Latex>{"$e^x$"}</Latex>:</p>
+  <FormulaTable data={[
+    "$T_n(e^x) = \\displaystyle\\sum_0^k \\frac {e^0 x^k}{k!} = 1 + \\frac{x^2}{2!} + ... $"
+  ]}/>
 </div>
 
 
