@@ -35,7 +35,7 @@ var data = [
 ];
 
 
-const chartTile = "Triangular inequality and Proyections";
+const chartTile = "Triangular inequality and Projections";
 
 const chartProps = { data, layout, chartTile }
 export default chartProps;
