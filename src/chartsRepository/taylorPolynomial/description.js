@@ -8,7 +8,7 @@ const description = <div>
   <p>
     Let's compare <Latex>{"$f(x) = e^{x}$"}</Latex> with <Latex>{"$p(x) = \\displaystyle\\sum_0^k  \\frac{x^k}{k!}$"}</Latex> we are going to derivate these functions and evaluate them in <Latex>{"$x = 0$"}</Latex>. <br />
   </p>
-  <div style={{ overflowX: "scroll" }}>
+  <div style={{ overflowX: "scroll", backgroundColor: "#f1f1f1", paddingTop: "15px" }}>
     <table>
       <tbody>
         <tr>
@@ -32,27 +32,27 @@ const description = <div>
   </div>
   <p>
     This is great. As you can see all derivates are giving us the same function for both <Latex>{"$f(x)$"}</Latex> and <Latex>{"$p(x)$"}</Latex> I mean: <br /><br />
+  </p>
     <FormulaTable data={[
       "$f^{(k)}(x) = f(x) \\ \\forall \\ k = 1, 2, 3 ... $",
       "$p^{(k)}(x) = p(x) \\ \\forall \\ k = 1, 2, 3 ... $",
     ]} />
-  </p>
   <p>
     Now let's evaluate  <Latex>{"$x = 0$"}</Latex><br /><br />
+  </p>
     <FormulaTable data={[
       "$f^{(k)}(0) = 1 \\ \\forall \\ k = 1, 2, 3 ... $",
       "$p^{(k)}(0) = 1 \\ \\forall \\ k = 1, 2, 3 ... $",
       "$p^{(k)}(0) = f^{(k)}(0) \\ \\forall \\ k = 1, 2, 3 ... \\ $ so:",
     ]} />
-  </p>
   <p>
     Those functions <b>are essentially the same</b>. Now in general, <b>we are trying to find</b> a polynomial <Latex>{"$p$"}</Latex> wich matches with <Latex>{"$f$"}</Latex> and its first <Latex>{"$n$"}</Latex> derivates in <Latex>{"$x = 0$"}</Latex> (as we did previously with <Latex>{"$f(x) = e^{x}$"}</Latex>), so:<br /><br />
+  </p>
     <FormulaTable data={[
       "$f^{(0)}(0) = p^{(0)}(0)$",
       "$f^{(1)}(0) = p^{(1)}(0)$",
       "$f^{(n)}(0) = p^{(n)}(0) \\ \\forall \\ n = 1, 2, 3 ... $",
     ]} />
-  </p>
   <p>The polynomial is... yes, it's this:</p>
   <FormulaTable data={[
     "$p(x) = c_0 + c_1x + c_2x^2 + ... + c_nx^n$"
