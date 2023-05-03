@@ -16,7 +16,17 @@ const description = <div>
     "$\\lVert A \\rVert^2 + 2A \\cdot B + \\lVert B \\rVert^2 \\leq \\lVert A \\rVert^2 + 2 \\lVert A \\rVert \\lVert B \\rVert + \\lVert B \\rVert^2$",
     "$A \\cdot B \\leq \\lVert A \\rVert \\lVert B \\rVert$"
   ]} />
-  <p>Yes!, we got the Cauchy-Schwarz inequality, and as you know that is a fact. We don't need to demonstrate it again.</p>
+  <p>Yes!, we got the Cauchy-Schwarz inequality, and as you know that is a fact. We don't need to demonstrate it again. Let's keep it in mind because we are going to analyze our second chart. What would happen if our vectors are orthogonal?. Well, let's retake this:</p>
+  <FormulaTable data={[
+    "$\\lVert A + B \\rVert^2 = \\lVert A \\rVert^2 + 2 A \\cdot B + \\lVert B \\rVert^2$"
+  ]} />
+  <p>If <Latex>{"$A \\cdot B = 0$"}</Latex> our equation would be</p>
+  <FormulaTable data={[
+    "$\\lVert A + B \\rVert^2 = \\lVert A \\rVert^2 + \\lVert B \\rVert^2$"
+  ]} />
+  <p>This is pretty similar to the <b>Pythagorean' Theorem</b>. Indeed, it is the same, but in <Latex>{"$V_n$"}</Latex>. The most important thing is that for the Pythagorean Teorem the vectors form a 90° angle. In other words, <b>they are orthogonal</b>. So, if we compare our previous equations the difference is that <Latex>{"$A \\cdot B = 0$"}</Latex>, it means that when the vectors are orthogonal them internal product is <Latex>{"$0$"}</Latex>.</p>
+  <p><b>Definition</b>: Given <Latex>{"$A, B$ in $V_{n}$"}</Latex>. They are orthogonal if <Latex>{"$A \\cdot B = 0$"}</Latex></p>
+
 </div>
 
 const miniDescription = <div>
