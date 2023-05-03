@@ -32,7 +32,26 @@ const description = <div>
   <p style={{ textAlign: "center" }}>
     <img src={projection} alt="" style={{ width: "100%", maxWidth: "700px", height: "auto" }} />
   </p>
-
+  <p>If we check our second chart we can see the vectors <Latex>{"$A, B$"}</Latex> but there is another vector <Latex>{"$C$"}</Latex>, which is orthogonal to <Latex>{"$B$"}</Latex>. But, let's take a look. In our chart <Latex>{"$B + C$ != $A$"}</Latex> because the Paralelogram Law. So, if we think we have to scale <Latex>{"$B$"}</Latex>, to sum <Latex>{"$B$ and $C$"}</Latex>. So, if we multiply <Latex>{"$tB$"}</Latex> as we can see in our chart, we are going to have <Latex>{"$A = tB + C$"}</Latex> following the idea of the "shadow". Now, let's eliminate <Latex>{"$C$"}</Latex> from this equation.</p>
+  <FormulaTable data={[
+    "$A = tB + C$ multiplying by $B$",
+    "$A \\cdot B = tB \\cdot B + C \\cdot B$",
+    "$C \\cdot B = 0$ since they are orthogonal",
+    "$A \\cdot B = tB \\cdot B$",
+    "$t = \\frac{A \\cdot B}{B \\cdot B}  = \\frac{A \\cdot B}{\\ \\lVert B \\rVert^2}$",
+  ]} />
+  <p>It means that if you multiply <Latex>{"$tB$"}</Latex> you are going to get the projection of <Latex>{"$A$ onto $B$"}</Latex>.</p>
+  <hr />
+  <p>Finally, as we can see there is an angle <Latex>{"$\\theta$"}</Latex> between <Latex>{"$A$ and $tB$"}</Latex>. So, as usual</p>
+  <FormulaTable data={[
+    "$cos(\\theta) = \\frac {t\\lVert B \\rVert}{\\lVert A \\rVert}$ replacing $t$",
+    "$cos(\\theta) = \\frac {A \\cdot B}{\\lVert A \\rVert \\lVert B \\rVert}$",
+    "$A \\cdot B = \\lVert A \\rVert \\lVert B \\rVert cos(\\theta)$",
+  ]} />
+  <p>This is an alternative way to calculate the internal product of vectors. But, even better, You can calculate the angle between two vectors:</p>
+  <FormulaTable data={[
+    "$\\theta = cos^{-1} (\\frac {A \\cdot B}{\\lVert A \\rVert \\lVert B \\rVert} )$",
+  ]} />
 </div>
 
 const miniDescription = <div>
@@ -48,8 +67,8 @@ const miniDescription = <div>
   ]} />
   <p>Finally we will get how to calculate the <b>angle between two vectors</b>. All those things are possible after analizing the Triangular inequality.</p>
   <FormulaTable data={[
-    "$A \\cdot B = \\lVert A \\rVert \\lVert B \\rVert cos\\Theta $",
-    "$\\Theta = cos^{-1} (\\frac {A \\cdot B}{\\lVert A \\rVert \\lVert B \\rVert} )$",
+    "$A \\cdot B = \\lVert A \\rVert \\lVert B \\rVert cos\\theta $",
+    "$\\theta = cos^{-1} (\\frac {A \\cdot B}{\\lVert A \\rVert \\lVert B \\rVert} )$",
   ]} />
 
 </div>
