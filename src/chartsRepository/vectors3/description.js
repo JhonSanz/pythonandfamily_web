@@ -1,4 +1,5 @@
 import FormulaTable from 'utils/formulaTable';
+import projection from "img/projections.png";
 var Latex = require('react-latex');
 
 const description = <div>
@@ -26,6 +27,11 @@ const description = <div>
   ]} />
   <p>This is pretty similar to the <b>Pythagorean' Theorem</b>. Indeed, it is the same, but in <Latex>{"$V_n$"}</Latex>. The most important thing is that for the Pythagorean Teorem the vectors form a 90° angle. In other words, <b>they are orthogonal</b>. So, if we compare our previous equations the difference is that <Latex>{"$A \\cdot B = 0$"}</Latex>, it means that when the vectors are orthogonal them internal product is <Latex>{"$0$"}</Latex>.</p>
   <p><b>Definition</b>: Given <Latex>{"$A, B$ in $V_{n}$"}</Latex>. They are orthogonal if <Latex>{"$A \\cdot B = 0$"}</Latex></p>
+  <hr />
+  <p>Now, let's imagine this scenario. This is a bus stop, and as you can see there is a ceiling to protect pedestrians from the sunlight. This <b>generates a shadow on the floor</b>. This is exactly the same as our second chart, just we have to keep in mind that the vector <Latex>{"$A$"}</Latex> generates a "shadow" on <Latex>{"$B$"}</Latex>. It is important to note that this visual approach could be tricky because the position of the sun could affect the position of the shadow. In this ideal scenario the sun generates a  <b>shadow which is 90° with the floor</b>.</p><br />
+  <p style={{ textAlign: "center" }}>
+    <img src={projection} alt="" style={{ width: "100%", maxWidth: "700px", height: "auto" }} />
+  </p>
 
 </div>
 
