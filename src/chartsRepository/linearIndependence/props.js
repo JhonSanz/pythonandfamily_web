@@ -19,7 +19,7 @@ const data = [
 const layout = {
   'scene': {
     'camera': {
-      'eye': { 'x': 1, 'y': -1.8, 'z': 0.92 }
+      'eye': { 'x': 1, 'y': -2.5, 'z': 0.92 }
     }
   },
 }
@@ -55,6 +55,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='xVector'
           className='constants'
           type="number"
+          value={inputValues.xVector}
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 1 \\\\ 0 \\\\ 0 \\end{matrix} +$"}</Latex>
@@ -62,6 +63,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='yVector'
           className='constants'
           type="number"
+          value={inputValues.yVector}
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 0 \\\\ 1 \\\\ 0 \\end{matrix} +$"}</Latex>
@@ -69,9 +71,11 @@ const DataManager = (setmanagedData, managerParams) => {
           name='zVector'
           className='constants'
           type="number"
+          value={inputValues.zVector}
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 0 \\\\ 0 \\\\ 1 \\end{matrix}$"}</Latex>
+        <Latex>{`$ \\ = ${inputValues.xVector || "0"}\\hat{i} + ${inputValues.yVector || "0"}\\hat{j} + ${inputValues.zVector || "0"}\\hat{k}$`}</Latex>
       </div>
       <br />
       <ButtonGroup variant="contained" aria-label="outlined primary button group">
@@ -79,7 +83,12 @@ const DataManager = (setmanagedData, managerParams) => {
           size="small"
           color="secondary"
           onClick={() => {
-            setmanagedData(data)
+            setmanagedData(data);
+            setInputValues({
+              xVector: "",
+              yVector: "",
+              zVector: "",
+            })
           }}
         >
           Reset
