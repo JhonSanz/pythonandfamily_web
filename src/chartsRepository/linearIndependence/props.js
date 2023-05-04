@@ -55,7 +55,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='xVector'
           className='constants'
           type="number"
-          value={inputValues.xVector}
+          value={inputValues.xVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 1 \\\\ 0 \\\\ 0 \\end{matrix} +$"}</Latex>
@@ -63,7 +63,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='yVector'
           className='constants'
           type="number"
-          value={inputValues.yVector}
+          value={inputValues.yVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 0 \\\\ 1 \\\\ 0 \\end{matrix} +$"}</Latex>
@@ -71,7 +71,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='zVector'
           className='constants'
           type="number"
-          value={inputValues.zVector}
+          value={inputValues.zVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 0 \\\\ 0 \\\\ 1 \\end{matrix}$"}</Latex>
