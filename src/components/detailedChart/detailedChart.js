@@ -26,13 +26,24 @@ const style = {
 export default function DetailedChart({
   miniDescription,
   description,
-  chartProps
+  chartProps,
+  module
 }) {
   const { data, layout, chartTile, DataManager } = chartProps;
   const [open, setOpen] = useState(false);
   const [initialData, setIinitialData] = useState([]);
   const [managedData, setmanagedData] = useState(undefined);
   const [count, setCount] = useState(data.length);
+  const [inputValues, setInputValues] = useState({
+    xVector: "",
+    yVector: "",
+    zVector: "",
+  });
+
+  const defaultParams = {
+    "taylorPolynomial": { count, setCount },
+    "linearIndependence": { inputValues, setInputValues },
+  }
 
   useEffect(() => {
     setIinitialData(data);
@@ -97,7 +108,10 @@ export default function DetailedChart({
         >
           <CardContent>
             {miniDescription}
-            {DataManager !== undefined && DataManager(setmanagedData, count, setCount)}
+            {
+              DataManager !== undefined &&
+              DataManager(setmanagedData, defaultParams)
+            }
             <br />
             <div style={{ display: "flex", justifyContent: "end" }}>
               <Button

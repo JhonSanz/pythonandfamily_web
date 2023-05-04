@@ -42,6 +42,7 @@ const DefaultChartComponent = ({
           miniDescription={chartMiniDescription}
           description={chartDescription}
           chartProps={chartProps}
+          module={module}
         />
       }
     </Grid>

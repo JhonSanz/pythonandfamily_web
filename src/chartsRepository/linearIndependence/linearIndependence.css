@@ -5,3 +5,8 @@
     border: 1px dotted gray;
     text-align: center;
 }
+
+.constants::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

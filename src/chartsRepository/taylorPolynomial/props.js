@@ -75,7 +75,9 @@ const addTerm = (count) => {
   return [data[0], data[count]];
 }
 
-const DataManager = (setmanagedData, count, setCount) => {
+const DataManager = (setmanagedData, managerParams) => {
+  const { count, setCount } = managerParams["taylorPolynomial"];
+
   return (
     <div>
       <ButtonGroup variant="contained" aria-label="outlined primary button group">

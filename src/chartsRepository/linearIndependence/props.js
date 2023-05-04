@@ -38,16 +38,9 @@ const addVector = (vectorCoords) => {
   ]
 }
 
-const DataManager = (setmanagedData) => {
-  const [inputValues, setInputValues] = useState({});
+const DataManager = (setmanagedData, managerParams) => {
 
-  useEffect(() => {
-    setInputValues({
-      xVector: "",
-      yVector: "",
-      zVector: "",
-    })
-  }, [])
+  const { inputValues, setInputValues } = managerParams["linearIndependence"];
 
   const setVectorValue = (e) => {
     const tempValues = { ...inputValues };
@@ -61,21 +54,21 @@ const DataManager = (setmanagedData) => {
         <input
           name='xVector'
           className='constants'
-          type="text"
+          type="number"
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 1 \\\\ 0 \\\\ 0 \\end{matrix} +$"}</Latex>
         <input
           name='yVector'
           className='constants'
-          type="text"
+          type="number"
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 0 \\\\ 1 \\\\ 0 \\end{matrix} +$"}</Latex>
         <input
           name='zVector'
           className='constants'
-          type="text"
+          type="number"
           onChange={(e) => setVectorValue(e)}
         />
         <Latex>{"$\\begin{matrix} 0 \\\\ 0 \\\\ 1 \\end{matrix}$"}</Latex>
