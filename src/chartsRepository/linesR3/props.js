@@ -2,7 +2,7 @@ import { generateConeCoords, generate_LineCoords, generateMarker } from 'utils/g
 import COLORS from 'utils/colors';
 
 const lines = [
-  { x: [0, 1], y: [0, 1], z: [0, 0.5], cone: true, color: COLORS.orange, name: 'A', dotted: false }, // A
+  { x: [0, 1], y: [0, 1], z: [0, 0.5], cone: true, color: COLORS.orange, name: 'A', dotted: false },
   { x: [0, 0.2], y: [0, 1], z: [0, 1], cone: false, color: COLORS.blue, name: '', dotted: true },
   { x: [0, 0.7], y: [0, 1.5], z: [0, 1.25], cone: false, color: COLORS.blue, name: '', dotted: true },
   { x: [0, 1.2], y: [0, 2], z: [0, 1.5], cone: false, color: COLORS.blue, name: '', dotted: true },
