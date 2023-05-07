@@ -1,12 +1,13 @@
 import { generateConeCoords, generate_LineCoords } from 'utils/generateVector';
+import COLORS from 'utils/colors';
 
 const lines = [
-  { x: [0, 8], y: [0, 8], z: [0, 10], cone: true, color: "#e64a19", name: 'A', dotted: false },
-  { x: [0, 12], y: [0, 12], z: [0, 15], cone: true, color: "#388e3c", name: 'Q', dotted: true },
-  { x: [0, 8], y: [0, 8], z: [0, 0], cone: false, color: "#1976d3", name: '', dotted: true },
-  { x: [8, 8], y: [8, 8], z: [0, 10], cone: false, color: "#1976d3", name: '', dotted: true },
-  { x: [8, 8], y: [0, 8], z: [0, 0], cone: false, color: "#1976d3", name: '', dotted: true },
-  { x: [0, 8], y: [8, 8], z: [0, 0], cone: false, color: "#1976d3", name: '', dotted: true },
+  { x: [0, 8], y: [0, 8], z: [0, 10], cone: true, color: COLORS.orange, name: 'A', dotted: false },
+  { x: [0, 12], y: [0, 12], z: [0, 15], cone: true, color: COLORS.green, name: 'Q', dotted: true },
+  { x: [0, 8], y: [0, 8], z: [0, 0], cone: false, color: COLORS.blue, name: '', dotted: true },
+  { x: [8, 8], y: [8, 8], z: [0, 10], cone: false, color: COLORS.blue, name: '', dotted: true },
+  { x: [8, 8], y: [0, 8], z: [0, 0], cone: false, color: COLORS.blue, name: '', dotted: true },
+  { x: [0, 8], y: [8, 8], z: [0, 0], cone: false, color: COLORS.blue, name: '', dotted: true },
 ];
 
 const data = [

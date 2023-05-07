@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { generateConeCoords, generate_LineCoords } from 'utils/generateVector';
+import COLORS from 'utils/colors';
 import './linearIndependence.css';
 var Latex = require('react-latex');
 
 const lines = [
-  { x: [0, 1], y: [0, 0], z: [0, 0], cone: true, color: "#e64a19", name: '', dotted: false },
-  { x: [0, 0], y: [0, 1], z: [0, 0], cone: true, color: "#e64a19", name: '', dotted: false },
-  { x: [0, 0], y: [0, 0], z: [0, 1], cone: true, color: "#e64a19", name: '', dotted: false },
+  { x: [0, 1], y: [0, 0], z: [0, 0], cone: true, color: COLORS.orange, name: '', dotted: false },
+  { x: [0, 0], y: [0, 1], z: [0, 0], cone: true, color: COLORS.orange, name: '', dotted: false },
+  { x: [0, 0], y: [0, 0], z: [0, 1], cone: true, color: COLORS.orange, name: '', dotted: false },
 ];
 
 const data = [
@@ -29,7 +30,7 @@ const addVector = (vectorCoords) => {
 
   const newVector = {
     x: [0, parseInt(xVector)], y: [0, parseInt(yVector)], z: [0, parseInt(zVector)],
-    cone: true, color: "#e64a19", name: '', dotted: false
+    cone: true, color: COLORS.orange, name: '', dotted: false
   }
   return [
     ...data,

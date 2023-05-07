@@ -29,4 +29,16 @@ const generate_LineCoords = (lineCoords) => {
   }
 }
 
-export { generateConeCoords, generate_LineCoords };
+const generateMarker = (markerCoords) => {
+  const { x, y, z, color, name } = markerCoords;
+  return {
+    'type': 'scatter3d', 'mode': 'markers+text', 'text': name,
+    'textposition': 'middle left', 'showlegend': false,
+    'marker': {
+      'color': color,
+    },
+    'x': x, 'y': y, 'z': z,
+  }
+}
+
+export { generateConeCoords, generate_LineCoords, generateMarker };
