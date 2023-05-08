@@ -39,9 +39,29 @@ const description = <div>
       </tr>
     </tbody>
   </table>
-  <p>It is great to know that these reasonings are supported by the fact that <Latex>{"$A, B$"}</Latex> were <b>linearly dependent</b> if <Latex>{"$B = cA$"}</Latex>. Now let's check an example in <Latex>{"$\\reals^2$"}</Latex>. We will get the usual equations we leanrt in the school, but we will also check some important consideration. Given</p>
-  
-
+  <p>It is great to know that these reasonings are supported by the fact that <Latex>{"$A, B$"}</Latex> were <b>linearly dependent</b> if <Latex>{"$B = cA$"}</Latex>. Now let's check an example in <Latex>{"$\\reals^2$"}</Latex>. We will get the usual equations we learnt in the school, but we will also check some important consideration. Given <Latex>{"$P, A$ in $\\reals^3$"}</Latex> and a line defined by <Latex>{"$L(P;A) = \\{P + tA \\}$"}</Latex>:</p>
+  <FormulaTable data={["$P = (p, q, r) \\ $ $ \\ A = (a, b, c)$"]} />
+  <FormulaTable data={[
+    "$L(P;A) = (p, q, r) + t(a, b, c)$",
+    "$(x, y, z) = (p, q, r) + t(a, b, c)$",
+    "$(x, y, z) = (p + ta, q + tb, r + tc)$, so",
+    "$x = p + ta$; $\\ y = q + tb$; $\\ z = q + tc$",
+  ]}
+  />
+  <p>If we use these equations <Latex>{"$x = p + ta$; $\\ y = q + tb$"}</Latex> in <Latex>{"$\\reals^2$"}</Latex>, we can solve for <Latex>{"$t$"}</Latex> in both</p>
+  <FormulaTable data={[
+    "$\\frac{(x-p)}{a} = \\frac{(y-q)}{b}$",
+    "$b(x-p) = a(y-q)$",
+    "$(y-q) = \\frac{b}{a}(x-p)$",
+  ]}
+  />
+  <p>Next, remember that <Latex>{"$a, b$"}</Latex> are components of <Latex>{"$A$"}</Latex>, but what would happen if I don't know <Latex>{"$A$"}</Latex>? we can generate our line with two points <Latex>{"$P, Q$"}</Latex> like we saw previously. So, <Latex>{"$\\frac{b}{a}$"}</Latex> will change and if we have <Latex>{"$a = x_2 - x_1$"}</Latex> and <Latex>{"$b = y_2 - y_1$"}</Latex>, assuming that <Latex>{"$x_2, y_2$"}</Latex> belong to <Latex>{"$Q$"}</Latex>, we will get:</p>
+  <FormulaTable data={[
+    "$(y-q) = \\frac{(y_2 - y_1)}{(x_2 - x_1)}(x-p)$",
+    "$m = \\frac{(y_2 - y_1)}{(x_2 - x_1)}$",
+  ]}
+  />
+  <p>Which is the equation that we all know. But, it has something special <Latex>{"$x_2 - x_1 $ ≠ $ 0$"}</Latex>. However, if we analyze it as vectors we don't have to <b>face that restriction</b>, that is interesting because it appears when we use the cartesian representation.</p>
 </div>
 
 

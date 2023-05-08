@@ -32,7 +32,7 @@ const description = <div>
   <p style={{ textAlign: "center" }}>
     <img src={projection} alt="" style={{ width: "100%", maxWidth: "700px", height: "auto" }} />
   </p>
-  <p>If we check our second chart we can see the vectors <Latex>{"$A, B$"}</Latex> but there is another vector <Latex>{"$C$"}</Latex>, which is orthogonal to <Latex>{"$B$"}</Latex>. But, let's take a look. In our chart <Latex>{"$B + C$ != $A$"}</Latex> because the Paralelogram Law. So, if we think we have to scale <Latex>{"$B$"}</Latex>, to sum <Latex>{"$B$ and $C$"}</Latex>. So, if we multiply <Latex>{"$tB$"}</Latex> as we can see in our chart, we are going to have <Latex>{"$A = tB + C$"}</Latex> following the idea of the "shadow". Now, let's eliminate <Latex>{"$C$"}</Latex> from this equation.</p>
+  <p>If we check our second chart we can see the vectors <Latex>{"$A, B$"}</Latex> but there is another vector <Latex>{"$C$"}</Latex>, which is orthogonal to <Latex>{"$B$"}</Latex>. But, let's take a look. In our chart <Latex>{"$B + C$ ≠ $A$"}</Latex> because the Paralelogram Law. So, if we think we have to scale <Latex>{"$B$"}</Latex>, to sum <Latex>{"$B$ and $C$"}</Latex>. So, if we multiply <Latex>{"$tB$"}</Latex> as we can see in our chart, we are going to have <Latex>{"$A = tB + C$"}</Latex> following the idea of the "shadow". Now, let's eliminate <Latex>{"$C$"}</Latex> from this equation.</p>
   <FormulaTable data={[
     "$A = tB + C$ multiplying by $B$",
     "$A \\cdot B = tB \\cdot B + C \\cdot B$",
