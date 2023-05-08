@@ -79,14 +79,14 @@ const data = generateData(points, lines);
 
 const applyNewData = (linePropsData) => {
   const P = {
-    x: parseInt(linePropsData.xInitialPoint),
-    y: parseInt(linePropsData.yInitialPoint),
-    z: parseInt(linePropsData.zInitialPoint),
+    x: parseFloat(linePropsData.xInitialPoint),
+    y: parseFloat(linePropsData.yInitialPoint),
+    z: parseFloat(linePropsData.zInitialPoint),
   };
   const A = {
-    x: parseInt(linePropsData.xDirectionVector),
-    y: parseInt(linePropsData.yDirectionVector),
-    z: parseInt(linePropsData.zDirectionVector),
+    x: parseFloat(linePropsData.xDirectionVector),
+    y: parseFloat(linePropsData.yDirectionVector),
+    z: parseFloat(linePropsData.zDirectionVector),
   };
   const points = generatePointsSet(P, A);
   const lines = generateLinesSet(P, A);
@@ -111,6 +111,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='xDirectionVector'
           className='constants'
           type="number"
+          step={0.1}
           value={lineProps.xDirectionVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -119,6 +120,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='yDirectionVector'
           className='constants'
           type="number"
+          step={0.1}
           value={lineProps.yDirectionVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -127,6 +129,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='zDirectionVector'
           className='constants'
           type="number"
+          step={0.1}
           value={lineProps.zDirectionVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -138,6 +141,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='xInitialPoint'
           className='constants'
           type="number"
+          step={0.1}
           value={lineProps.xInitialPoint || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -146,6 +150,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='yInitialPoint'
           className='constants'
           type="number"
+          step={0.1}
           value={lineProps.yInitialPoint || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -154,6 +159,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='zInitialPoint'
           className='constants'
           type="number"
+          step={0.1}
           value={lineProps.zInitialPoint || ""}
           onChange={(e) => setVectorValue(e)}
         />
