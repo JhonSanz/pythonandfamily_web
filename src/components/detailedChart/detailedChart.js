@@ -55,7 +55,7 @@ export default function DetailedChart({
   useEffect(() => {
     setIinitialData(data);
     setmanagedData(DataManager !== undefined ? data : undefined);
-  }, [data])
+  }, [data, DataManager])
 
   useEffect(() => {
     Plotly.react(
@@ -90,8 +90,9 @@ export default function DetailedChart({
           "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d"
         ]
       }
+      
     );
-  }, [initialData, managedData])
+  }, [initialData, managedData, layout, chartTile])
 
   return (
     <Grid

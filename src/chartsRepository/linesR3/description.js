@@ -62,6 +62,14 @@ const description = <div>
   ]}
   />
   <p>Which is the equation that we all know. But, it has something special <Latex>{"$x_2 - x_1 $ ≠ $ 0$"}</Latex>. However, if we analyze it as vectors we don't have to <b>face that restriction</b>, that is interesting because it appears when we use the cartesian representation.</p>
+  <hr />
+  <p>Finally, let's introduce another important concept. We learnt that two vectors which are orthogonal have their internal product <Latex>{"$= 0$"}</Latex>. Given some vector <Latex>{"$A = (a, b)$"}</Latex>, we can create a vector <Latex>{"$N = (b, -a)$"}</Latex>, which can make</p>
+  <FormulaTable data={[
+    "$A \\cdot N = (a, b) \\cdot (b, -a)$",
+    "$= ab + (-ab) = 0$",
+  ]}
+  />
+  <p>This is valid for this context, but the important thing here is to know that <Latex>{"$N$"}</Latex> is the <b>normal vector</b> and it is orthogonal to <Latex>{"$A$"}</Latex>.</p>
 </div>
 
 
