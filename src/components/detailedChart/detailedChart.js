@@ -6,8 +6,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Plotly from 'plotly.js-gl3d-dist-min';
-import createPlotlyComponent from 'react-plotly.js/factory';
-const Plot = createPlotlyComponent(Plotly);
 
 const style = {
   position: 'absolute',
@@ -39,10 +37,19 @@ export default function DetailedChart({
     yVector: "",
     zVector: "",
   });
+  const [lineProps, setLineProps] = useState({
+    xDirectionVector: "1",
+    yDirectionVector: "1",
+    zDirectionVector: "0.5",
+    xInitialPoint: "0.2",
+    yInitialPoint: "1",
+    zInitialPoint: "1",
+  });
 
   const defaultParams = {
     "taylorPolynomial": { count, setCount },
     "linearIndependence": { inputValues, setInputValues },
+    "linesR3": { lineProps, setLineProps }
   }
 
   useEffect(() => {
@@ -69,7 +76,6 @@ export default function DetailedChart({
           x: 0, y: 1
         },
         autosize: true,
-        // paper_bgcolor: '#fdfdfd'
       },
       {
         autosizable: true, responsive: true,

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { generateConeCoords, generate_LineCoords } from 'utils/generateVector';
