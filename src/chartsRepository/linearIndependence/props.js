@@ -28,7 +28,7 @@ const addVector = (vectorCoords) => {
   const { xVector, yVector, zVector } = vectorCoords;
 
   const newVector = {
-    x: [0, parseInt(xVector)], y: [0, parseInt(yVector)], z: [0, parseInt(zVector)],
+    x: [0, parseFloat(xVector)], y: [0, parseFloat(yVector)], z: [0, parseFloat(zVector)],
     cone: true, color: COLORS.orange, name: '', dotted: false
   }
   return [
@@ -55,6 +55,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='xVector'
           className='constants'
           type="number"
+          step={0.1}
           value={inputValues.xVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -63,6 +64,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='yVector'
           className='constants'
           type="number"
+          step={0.1}
           value={inputValues.yVector || ""}
           onChange={(e) => setVectorValue(e)}
         />
@@ -71,6 +73,7 @@ const DataManager = (setmanagedData, managerParams) => {
           name='zVector'
           className='constants'
           type="number"
+          step={0.1}
           value={inputValues.zVector || ""}
           onChange={(e) => setVectorValue(e)}
         />

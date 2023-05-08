@@ -42,7 +42,7 @@ const description = <div>
   ]} />
   <p>It means that if you multiply <Latex>{"$tB$"}</Latex> you are going to get the projection of <Latex>{"$A$ onto $B$"}</Latex>.</p>
   <hr />
-  <p>Finally, as we can see there is an angle <Latex>{"$\\theta$"}</Latex> between <Latex>{"$A$ and $tB$"}</Latex>. So, as usual</p>
+  <p>Finally, as we can see there is an angle <Latex>{"$\\theta$"}</Latex> between <Latex>{"$A$ and $tB$"}</Latex>. So, as usual (opposite side over hypotenuse): </p>
   <FormulaTable data={[
     "$cos(\\theta) = \\frac {t\\lVert B \\rVert}{\\lVert A \\rVert}$ replacing $t$",
     "$cos(\\theta) = \\frac {A \\cdot B}{\\lVert A \\rVert \\lVert B \\rVert}$",
