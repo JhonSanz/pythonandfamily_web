@@ -41,4 +41,23 @@ const generateMarker = (markerCoords) => {
   }
 }
 
-export { generateConeCoords, generate_LineCoords, generateMarker };
+const generate2dVectors = (x, y, axis, dotted, text) => {
+  return {
+    x,
+    y,
+    xaxis: `x${axis}`,
+    yaxis: `y${axis}`,
+    mode: 'lines+markers+text',
+    type: 'scatter',
+    marker: {
+      symbol: '1'
+    },
+    line: {
+      dash: dotted ? 'dot' : 'solid'
+    },
+    text,
+    textposition: 'top',
+  }
+};
+
+export { generateConeCoords, generate_LineCoords, generateMarker, generate2dVectors };

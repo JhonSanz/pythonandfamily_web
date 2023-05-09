@@ -1,21 +1,4 @@
-const generate2dVectors = (x, y, axis, dotted, text) => {
-  return {
-    x,
-    y,
-    xaxis: `x${axis}`,
-    yaxis: `y${axis}`,
-    mode: 'lines+markers+text',
-    type: 'scatter',
-    marker: {
-      symbol: '1'
-    },
-    line: {
-      dash: dotted ? 'dot' : 'solid'
-    },
-    text,
-    textposition: 'top',
-  }
-};
+import { generate2dVectors } from 'utils/generateVector';
 
 var layout = {
   grid: { rows: 2, columns: 1, pattern: 'independent', ygap: 0.09 },

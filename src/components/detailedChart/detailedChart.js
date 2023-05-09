@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Plotly from 'plotly.js-gl3d-dist-min';
+import { layout_subchart, config_subchart } from 'utils/chartProps';
 
 const style = {
   position: 'absolute',
@@ -63,34 +64,13 @@ export default function DetailedChart({
       managedData || initialData,
       {
         ...layout,
-        margin: {
-          l: 0,
-          r: 0,
-          b: 0,
-          t: 0,
-          pad: 0
-        },
+        ...layout_subchart,
         title: {
           text: chartTile,
-          pad: { t: 10, l: 10 },
-          x: 0, y: 1
-        },
-        autosize: true,
+          ...layout_subchart.title
+        }
       },
-      {
-        autosizable: true, responsive: true,
-        displaylogo: false,
-        modeBarButtonsToRemove: [
-          // "zoom2d", "pan2d",
-          "select2d", "lasso2d", "zoomIn2d",
-          "zoomOut2d", "autoScale2d", "resetScale2d",
-          "hoverClosestGl2d", "hoverClosestPie", "toggleHover", "resetViews",
-          "toImage", "sendDataToCloud", "toggleSpikelines", "resetViewMapbox",
-          "zoom3d", "pan3d", "orbitRotation", "tableRotation", "handleDrag3d",
-          "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d"
-        ]
-      }
-      
+      config_subchart
     );
   }, [initialData, managedData, layout, chartTile])
 

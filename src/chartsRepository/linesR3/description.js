@@ -1,5 +1,26 @@
 import FormulaTable from 'utils/formulaTable';
+import { generate2dVectors } from 'utils/generateVector';
+import { layout_subchart, config_subchart } from 'utils/chartProps';
+import ModalChart from 'components/detailedChart/modalChart';
+import Plot from 'react-plotly.js';
+
 var Latex = require('react-latex');
+
+const layout_props = {
+  ...layout_subchart, showlegend: false,
+  title: {
+    text: "Normal vector",
+    ...layout_subchart.title
+  },
+}
+
+const data_subchart = [
+  generate2dVectors([0, 1, 2], [0, 1, 2], "1", false, ['', 'N', '']),
+  generate2dVectors([0, 1, 2], [0, 0.25, 0.5], "1", false, ['', 'Q', '']),
+  generate2dVectors([0, 0.875, 1.75], [0, 0.5, 1], "1", false, ['', 'P', '']),
+  generate2dVectors([0, -0.125, -0.25], [0, 0.25, 0.5], "1", false, ['', 'A', '']),
+  generate2dVectors([2.25, 1.875, 1.25], [0, 0.75, 2], "1", false, ['', 'L', '']),
+]
 
 const description = <div>
   <p>
@@ -69,7 +90,28 @@ const description = <div>
     "$= ab + (-ab) = 0$",
   ]}
   />
-  <p>This is valid for this context, but the important thing here is to know that <Latex>{"$N$"}</Latex> is the <b>normal vector</b> and it is orthogonal to <Latex>{"$A$"}</Latex>.</p>
+  <p>This is valid for this context, but the important thing here is to know that <Latex>{"$N$"}</Latex> is the <b>normal vector</b> and it is orthogonal to <Latex>{"$A$"}</Latex>. Now, let's retake our previous cartesian equation <Latex>{"$b(x-p) - a(y-q) = 0$"}</Latex>. We got the conclusion that that equation represents a line. Well, let's check the following approach:</p>
+  <FormulaTable data={[
+    "$(X - P) \\cdot N = 0$",
+  ]}
+  />
+  <p>This is <b>elegant</b>. As we could see <Latex>{"$X - P$"}</Latex> defines the direction vector. The new element is that <Latex>{"$N$"}</Latex> is orthogonal to that direction vector. If we analyze it, all values which satisfy the equation are the ones belong to the line because they have to be orthogonal to <Latex>{"$X - P$"}</Latex>. But if it is not enough for you we can solve this like this</p>
+  <FormulaTable data={[
+    "$(X - P) \\cdot N = 0$",
+    "$((x, y) - (p, q)) \\cdot (b, -a) = 0$",
+    "$(x - p, y - q) \\cdot (b, -a) = 0$",
+    "$b(x - p) - a(y - q) = 0$",
+  ]}
+  />
+  <p>Beautiful huh? yes! we got the cartesian equation</p>
+  <ModalChart chart={
+    <Plot
+      data={data_subchart}
+      layout={layout_props}
+      config={config_subchart}
+      style={{ width: '100%', height: '80%', marginTop: "0px" }}
+    />
+  } />
 </div>
 
 
