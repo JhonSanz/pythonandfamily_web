@@ -16,8 +16,8 @@ const layout_props = {
 
 const data_subchart = [
   generate2dVectors([0, 1, 2], [0, 1, 2], "1", false, ['', 'N', '']),
-  generate2dVectors([0, 1, 2], [0, 0.25, 0.5], "1", false, ['', 'Q', '']),
-  generate2dVectors([0, 0.875, 1.75], [0, 0.5, 1], "1", false, ['', 'P', '']),
+  generate2dVectors([0, 2], [0, 0.5], "1", false, ['', 'Q']),
+  generate2dVectors([0, 1.75], [0, 1], "1", false, ['', 'P']),
   generate2dVectors([0, -0.125, -0.25], [0, 0.25, 0.5], "1", false, ['', 'A', '']),
   generate2dVectors([2.25, 1.875, 1.25], [0, 0.75, 2], "1", false, ['', 'L', '']),
 ]
@@ -103,7 +103,7 @@ const description = <div>
     "$b(x - p) - a(y - q) = 0$",
   ]}
   />
-  <p>Beautiful huh? yes! we got the cartesian equation</p>
+  <p>Beautiful huh? yes! we got the cartesian equation. This is a good schema of our example.</p>
   <ModalChart chart={
     <Plot
       data={data_subchart}
@@ -112,6 +112,8 @@ const description = <div>
       style={{ width: '100%', height: '80%', marginTop: "0px" }}
     />
   } />
+  <br />
+  <p>Finally, the vector with minimum length is the vector which is the projection of <Latex>{"$P$ over $N$"}</Latex>. This is great because we could use all things we learnt previously.</p>
 </div>
 
 
