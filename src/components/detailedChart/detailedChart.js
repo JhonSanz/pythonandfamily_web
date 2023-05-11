@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -94,20 +94,29 @@ export default function DetailedChart({
           elevation={3}
         >
           <CardContent>
-            {miniDescription}
-            {
-              DataManager !== undefined &&
-              DataManager(setmanagedData, defaultParams)
-            }
-            <br />
-            <div style={{ display: "flex", justifyContent: "end" }}>
-              <Button
-                variant="outlined"
-                size='small'
-                onClick={() => setOpen(true)}
-              >
-                Continue reading
-              </Button>
+            <div>
+              <div>
+                <Suspense>
+                  {miniDescription}
+                </Suspense>
+              </div>
+              <div>
+                {
+                  DataManager !== undefined &&
+                  DataManager(setmanagedData, defaultParams)
+                }
+              </div>
+              <div>
+                <div style={{ display: "flex", justifyContent: "end" }}>
+                  <Button
+                    variant="outlined"
+                    size='small'
+                    onClick={() => setOpen(true)}
+                  >
+                    Continue reading
+                  </Button>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -121,8 +130,10 @@ export default function DetailedChart({
         alignItems={"center"}
         display={"flex"}
       >
-        <div id="plot_div" style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}>
-        </div>
+        <Suspense>
+          <div id="plot_div" style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}>
+          </div>
+        </Suspense>
       </Grid>
       <div>
         <Modal
@@ -132,7 +143,11 @@ export default function DetailedChart({
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            {description}
+            <div>
+              <Suspense>
+                {description}
+              </Suspense>
+            </div>
           </Box>
         </Modal>
       </div>

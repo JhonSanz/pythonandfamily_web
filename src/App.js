@@ -26,7 +26,7 @@ const DefaultChartComponent = ({
       setReady(true);
     }
     importChartModule();
-  });
+  }, [module]);
 
   return (
     <Grid>
