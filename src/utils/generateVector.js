@@ -60,4 +60,19 @@ const generate2dVectors = (x, y, axis, dotted, text) => {
   }
 };
 
-export { generateConeCoords, generate_LineCoords, generateMarker, generate2dVectors };
+const generatePlane = (data) => {
+  return {
+    opacity: 0.3,
+    type: 'mesh3d',
+    ...data,
+    scene: "scene1"
+  }
+};
+
+export {
+  generateConeCoords,
+  generate_LineCoords,
+  generateMarker,
+  generate2dVectors,
+  generatePlane
+};

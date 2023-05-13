@@ -86,7 +86,9 @@ const DataManager = (setmanagedData, managerParams) => {
           onClick={() => {
             if (count > 0) {
               setmanagedData(removeTerm(count - 1))
+              console.log("setmanagedData")
               setCount(count - 1);
+              console.log("setCount")
             }
           }}
         >

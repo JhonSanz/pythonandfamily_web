@@ -2,6 +2,7 @@ import { useState, useEffect, Suspense } from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import CenteredProgress from 'utils/progress';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
@@ -96,7 +97,7 @@ export default function DetailedChart({
           <CardContent>
             <div>
               <div>
-                <Suspense>
+                <Suspense fallback={<CenteredProgress />}>
                   {miniDescription}
                 </Suspense>
               </div>
@@ -130,7 +131,7 @@ export default function DetailedChart({
         alignItems={"center"}
         display={"flex"}
       >
-        <Suspense>
+        <Suspense fallback={<CenteredProgress />}>
           <div id="plot_div" style={{ width: '100%', height: '80%', margin: "20px", marginTop: "0px" }}>
           </div>
         </Suspense>
@@ -144,7 +145,7 @@ export default function DetailedChart({
         >
           <Box sx={style}>
             <div>
-              <Suspense>
+              <Suspense fallback={<CenteredProgress />}>
                 {description}
               </Suspense>
             </div>
