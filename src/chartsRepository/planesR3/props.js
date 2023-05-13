@@ -12,6 +12,10 @@ const P = { x: 1, y: 2, z: 2 }
 const A = { x: 1, y: 0, z: 1 }
 const B = { x: 1, y: 1, z: 0 }
 
+const V1 = { x: 1, y: 2.5, z: 1.5 }
+const V2 = { x: -0.5, y: 1, z: 1.5 }
+const V3 = { x: 1.5, y: 1, z: 3.5 }
+
 const generateLine = (P, vec, t, props) => {
   const { cone, color, name, dotted } = props;
   return {
@@ -60,17 +64,23 @@ const generateData = (points, lines, planes) => {
   ]
 }
 
-const generateLinesSet = (P, A, B, nullVector) => {
+const generateLinesSet = (P, A, B, V1, V2, V3, nullVector) => {
   return [
-    generateLine(nullVector, A, 1, { cone: false, color: COLORS.blue, name: 'A', dotted: false }),
-    generateLine(nullVector, B, 1, { cone: false, color: COLORS.blue, name: 'B', dotted: false }),
+    generateLine(nullVector, A, 1, { cone: false, color: COLORS.green, name: 'A', dotted: false }),
+    generateLine(nullVector, B, 1, { cone: false, color: COLORS.green, name: 'B', dotted: false }),
     generateLine(P, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
+    generateLine(V1, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
+    generateLine(V2, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
+    generateLine(V3, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
   ];
 }
 
-const generatePointsSet = (P, A) => {
+const generatePointsSet = (P, A, V1, V2, V3) => {
   return [
     generatePoint(P, A, 0, { color: COLORS.red, name: 'P' }),
+    generatePoint(V1, A, 0, { color: COLORS.red, name: '' }),
+    generatePoint(V2, A, 0, { color: COLORS.red, name: '' }),
+    generatePoint(V3, A, 0, { color: COLORS.red, name: '' }),
   ]
 }
 
@@ -81,8 +91,8 @@ const generatePlaneSet = (P, A, B, nullVector) => {
   ]
 }
 
-const lines = generateLinesSet(P, A, B, nullVector);
-const points = generatePointsSet(P, A);
+const lines = generateLinesSet(P, A, B, V1, V2, V3, nullVector);
+const points = generatePointsSet(P, A, V1, V2, V3);
 const planes = generatePlaneSet(P, A, B, nullVector);
 const data = generateData(points, lines, planes);
 const chartTile = "Planes in R³";
@@ -90,7 +100,7 @@ const chartTile = "Planes in R³";
 const layout = {
   'scene': {
     'camera': {
-      'eye': { 'x': 1, 'y': -2.5, 'z': 0.92 }
+      'eye': { 'x': -0.3, 'y': -1.2, 'z': -0.1 }
     }
   },
 }

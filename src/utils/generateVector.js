@@ -62,7 +62,7 @@ const generate2dVectors = (x, y, axis, dotted, text) => {
 
 const generatePlane = (data) => {
   return {
-    opacity: 0.3,
+    opacity: 0.2,
     type: 'mesh3d',
     ...data,
     scene: "scene1"
