@@ -33,7 +33,7 @@ export default function DetailedChart({
   const [open, setOpen] = useState(false);
   const [initialData, setIinitialData] = useState([]);
   const [managedData, setmanagedData] = useState(undefined);
-  const [count, setCount] = useState(data.length);
+  const [count, setCount] = useState(8);
   const [inputValues, setInputValues] = useState({
     xVector: "",
     yVector: "",
@@ -53,6 +53,23 @@ export default function DetailedChart({
     "linearIndependence": { inputValues, setInputValues },
     "linesR3": { lineProps, setLineProps }
   }
+
+  useEffect(() => {
+    setLineProps({
+      xDirectionVector: "1",
+      yDirectionVector: "1",
+      zDirectionVector: "0.5",
+      xInitialPoint: "0.2",
+      yInitialPoint: "1",
+      zInitialPoint: "1",
+    })
+    setInputValues({
+      xVector: "",
+      yVector: "",
+      zVector: "",
+    })
+    setCount(8)
+  }, [module])
 
   useEffect(() => {
     setIinitialData(data);

@@ -5,7 +5,6 @@ import {
   generatePlane
 } from 'utils/generateVector';
 import COLORS from 'utils/colors';
-var Latex = require('react-latex');
 
 const nullVector = { x: 0, y: 0, z: 0 }
 const P = { x: 1, y: 2, z: 2 }
@@ -66,28 +65,28 @@ const generateData = (points, lines, planes) => {
 
 const generateLinesSet = (P, A, B, V1, V2, V3, nullVector) => {
   return [
-    generateLine(nullVector, A, 1, { cone: false, color: COLORS.green, name: 'A', dotted: false }),
-    generateLine(nullVector, B, 1, { cone: false, color: COLORS.green, name: 'B', dotted: false }),
-    generateLine(P, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
-    generateLine(V1, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
-    generateLine(V2, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
-    generateLine(V3, P, 0, { cone: false, color: COLORS.blue, name: '', dotted: true }),
+    generateLine(nullVector, A, 1, { cone: false, color: COLORS.red, name: 'A', dotted: false }),
+    generateLine(nullVector, B, 1, { cone: false, color: COLORS.red, name: 'B', dotted: false }),
+    generateLine(P, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
+    generateLine(V1, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
+    generateLine(V2, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
+    generateLine(V3, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
   ];
 }
 
 const generatePointsSet = (P, A, V1, V2, V3) => {
   return [
-    generatePoint(P, A, 0, { color: COLORS.red, name: 'P' }),
-    generatePoint(V1, A, 0, { color: COLORS.red, name: '' }),
-    generatePoint(V2, A, 0, { color: COLORS.red, name: '' }),
-    generatePoint(V3, A, 0, { color: COLORS.red, name: '' }),
+    generatePoint(P, A, 0, { color: COLORS.blue, name: 'P' }),
+    generatePoint(V1, A, 0, { color: COLORS.blue, name: '' }),
+    generatePoint(V2, A, 0, { color: COLORS.blue, name: '' }),
+    generatePoint(V3, A, 0, { color: COLORS.blue, name: '' }),
   ]
 }
 
 const generatePlaneSet = (P, A, B, nullVector) => {
   return [
-    generatePlaneData(P, A, B, { color: COLORS.red, name: "" }),
-    generatePlaneData({ x: 1, y: 1, z: 0 }, A, B, { color: COLORS.red, name: "" })
+    generatePlaneData(P, A, B, { color: COLORS.blue, name: "" }),
+    generatePlaneData({ x: 1, y: 1, z: 0 }, A, B, { color: COLORS.blue, name: "" })
   ]
 }
 
