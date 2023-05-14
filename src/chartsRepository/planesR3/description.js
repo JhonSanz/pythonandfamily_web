@@ -25,6 +25,45 @@ const description = <div>
     "$y = p_2 + sa_2 + tb_2$",
     "$z = p_3 + sa_3 + tb_3$",
   ]} />
+  <p>The parameters <Latex>{"$s$ and $t$"}</Latex> can always be eliminated from these equations, getting a cartesian equation with the form <Latex>{"$ax +by + cz = d$"}</Latex>. Let's see it with an example:</p>
+  <FormulaTable enableScroll data={[
+    "$P = (1, 2, 3) $, $A = (1, 2, 1) $, $B = (1, 4, -1)$",
+    "$M = (1,2,3) + s(1,2,1) + t(1,4,-1)$",
+    "$   $",
+    "1. $x = 1 + s + t$ → $x - 1 = s + t$",
+    "2. $z = 3 + s - t$ → $z - 3 = s - t$",
+    "3. $y = 2 + 2s - 4t$",
+    "$  $",
+    "1. $+$ 2. $: x + z - 4 = 2s$",
+    "1. $-$ 2. $: x - z + 2 = 2t$",
+    "replace in 3.",
+    "$ $",
+    "$y = 2 + (x + z -4) - (2x - 2z + 4)$",
+    "$y = -x +3z - 6$",
+    "$x + y -3z = -6$ cool :)",
+  ]} />
+  <hr />
+  <p>Following the ideas developed in the lines section we can imagine a similar implementation to generate a plane with a <b>normal vector</b>. The problem here is that we will need two vectors as we have seen, and the trouble is because we need a normal vector which is <b>orthogonal to both</b>. To do that we have to introduce a new concept named <b>cross product</b>:</p>
+  <p><b>Definition</b>: Given <Latex>{"$A = (a_1, a_2, a_3)$ and $B = (b_1, b_2, b_3)$"}</Latex> vectors in <Latex>{"$\\reals^3$"}</Latex></p>
+  <FormulaTable enableScroll data={[
+    "$A \\times B = (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1)$",
+  ]} />
+  <p><b>What the fuck is this?</b> I can't understand how those wiz created these equations. Anyway, it is so useful because it satisfies our needings. Let's check again with an example. As we could see previously, two vectors are orthogonal if their internal product <Latex>{"$= 0$"}</Latex>, so:</p>
+  <FormulaTable enableScroll data={[
+    "$A \\cdot (A \\times B) = (a_1, a_2, a_3) \\cdot (a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1) $",
+    "$= a_1(a_2b_3 - a_3b_2) + a_2(a_3b_1 - a_1b_3) + a_3(a_1b_2 - a_2b_1)$",
+    "$= a_1a_2b_3 - a_1a_3b_2 + a_2a_3b_1 - a_2a_1b_3 + a_3a_1b_2 - a_3a_2b_1$",
+    "$= 0$ ♥",
+  ]} />
+  <p>It also works for <Latex>{"$B \\cdot (A \\times B)$"}</Latex>. It is exactly what we were looking for because <Latex>{"$A \\times B$"}</Latex> is orthogonal to both <Latex>{"$A, B$"}</Latex>. <Latex>{"$A \\times B$"}</Latex> will be our normal vector. But, before going further let's note cross product properties:</p>
+  <ListConsiderations data={[
+    <><Latex>{"$A \\times B = -(B \\times A)$"}</Latex></>,
+    <><Latex>{"$A \\times (B + C) = (A \\times B) + (A \\times C)$"}</Latex></>,
+    <><Latex>{"$c(A \\times B) = (cA) \\times B$"}</Latex></>,
+    <><Latex>{"$A \\cdot (A \\times B) = 0$"}</Latex></>,
+    <><Latex>{"$B \\cdot (A \\times B) = 0$"}</Latex></>,
+  ]} />
+  {/* // TODO: Lagrange identity */}
 </div>
 
 
