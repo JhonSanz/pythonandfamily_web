@@ -1,3 +1,4 @@
+import COLORS from 'utils/colors';
 var Latex = require('react-latex');
 
 const FormulaTable = ({
@@ -6,8 +7,8 @@ const FormulaTable = ({
   return (
     <div style={
       enableScroll ? {
-        overflowX: "scroll", backgroundColor: "#f1f1f1",
-        paddingTop: "15px"
+        overflowX: "scroll", backgroundColor: COLORS.lightGray2,
+        paddingTop: "15px", paddingLeft: "10px"
       } : {}
     }>
       <table>

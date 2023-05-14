@@ -2,6 +2,7 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
+import COLORS from 'utils/colors';
 
 
 const Home = ({ setOpen }) => {
@@ -24,12 +25,12 @@ const Home = ({ setOpen }) => {
           <CardContent>
             <h3>Why is this important?</h3>
             <p>Nowadays, artificial intelligence is growing up quickly. Even a lot of people (like me) are getting worry because we are near to lose our jobs because it is so posible that we can be replaced by an algorithm. I know that some artificial intelligence can compute 1000X faster than me. Even IA can understand better all math topics than any human.</p>
-            <p>It sounds bad. We can assume that it is not important to learn something new, and it makes kind of sense. But, with the time I realized that learning math goes beyond computing something in your head or approving your test. For me, learning math is a rebellion tool because it forces you to question yourself all the time.</p>
+            <p>It sounds bad. We can assume that it is not important to learn something new, and it makes kind of sense. But, with the time I realized that learning math goes beyond computing something in your head or approving your test. For me, learning math is a <b>rebellion</b> tool because it forces you to question yourself all the time.</p>
             <p></p>
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12} textAlign={"center"} sx={{ backgroundColor: "#fafafa", padding: "20px" }}>
+      <Grid item xs={12} textAlign={"center"} sx={{ backgroundColor: COLORS.lightGray, padding: "20px" }}>
         <b><cite>"Nullius in verba"</cite></b>
         <p>The Royal Society website says that the motto is "an expression of the determination of Fellows to withstand the domination of authority and to verify all statements by an appeal to facts determined by experiment.</p>
       </Grid>

@@ -1,3 +1,4 @@
+import ListConsiderations from 'utils/listConsiderations';
 import FormulaTable from 'utils/formulaTable';
 import { generate2dVectors } from 'utils/generateVector';
 import { layout_subchart, config_subchart } from 'utils/chartProps';
@@ -31,42 +32,27 @@ const description = <div>
   ]}
   />
   <p>Let's analyze some important considerations:</p>
-  <table>
-    <thead></thead>
-    <tbody>
-      <tr>
-        <td style={{ paddingRight: 10 }}>1</td>
-        <td>
-          We can replace the direction vector with some vector <Latex>{"$B$"}</Latex>, where <Latex>{"$B = cA$"}</Latex>. Because it keeps the same direction of <Latex>{"$A$"}</Latex> due to the fact that they are parallel.
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>
-          Two lines <Latex>{"$L(P;A)$"}</Latex> and <Latex>{"$L(P;B)$"}</Latex> which cross through the same point <Latex>{"$P$"}</Latex> are equal if the direction vectors <Latex>{"$A, B$"}</Latex> are parallel. If they were not parallel. We would get two different lines which cross through the same point but with <b>different slope</b>.
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>
-          Two lines <Latex>{"$L(P;A)$"}</Latex> and <Latex>{"$L(Q;A)$"}</Latex> with the same direction vector <Latex>{"$A$"}</Latex> are equal if <Latex>{"$Q \\in L(P;A)$"}</Latex>. It means that <Latex>{"$Q$"}</Latex> would keep the same position. We can check if <Latex>{"$Q \\in L(P;A)$"}</Latex> checking <Latex>{"$Q - P = cA$"}</Latex>, where <Latex>{"$c$"}</Latex> is some constant which means that <Latex>{"$Q - P$"}</Latex> is parallel to A.
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>
-          Two different points generate a line. The line defined by <Latex>{"$\\{P + t(Q - P) \\}$"}</Latex> will contain both <Latex>{"$P, Q$"}</Latex>.
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <ListConsiderations data={[
+    <>
+      We can replace the direction vector with some vector <Latex>{"$B$"}</Latex>, where <Latex>{"$B = cA$"}</Latex>. Because it keeps the same direction of <Latex>{"$A$"}</Latex> due to the fact that they are parallel.
+    </>,
+    <>
+      Two lines <Latex>{"$L(P;A)$"}</Latex> and <Latex>{"$L(P;B)$"}</Latex> which cross through the same point <Latex>{"$P$"}</Latex> are equal if the direction vectors <Latex>{"$A, B$"}</Latex> are parallel. If they were not parallel. We would get two different lines which cross through the same point but with <b>different slope</b>.
+    </>,
+    <>
+      Two lines <Latex>{"$L(P;A)$"}</Latex> and <Latex>{"$L(Q;A)$"}</Latex> with the same direction vector <Latex>{"$A$"}</Latex> are equal if <Latex>{"$Q \\in L(P;A)$"}</Latex>. It means that <Latex>{"$Q$"}</Latex> would keep the same position. We can check if <Latex>{"$Q \\in L(P;A)$"}</Latex> checking <Latex>{"$Q - P = cA$"}</Latex>, where <Latex>{"$c$"}</Latex> is some constant which means that <Latex>{"$Q - P$"}</Latex> is parallel to A.
+    </>,
+    <>
+      Two different points generate a line. The line defined by <Latex>{"$\\{P + t(Q - P) \\}$"}</Latex> will contain both <Latex>{"$P, Q$"}</Latex>.
+    </>
+  ]} />
   <p>It is great to know that these reasonings are supported by the fact that <Latex>{"$A, B$"}</Latex> were <b>linearly dependent</b> if <Latex>{"$B = cA$"}</Latex>. Now let's check an example in <Latex>{"$\\reals^2$"}</Latex>. We will get the usual equations we learnt in the school, but we will also check some important consideration. Given <Latex>{"$P, A$ in $\\reals^3$"}</Latex> and a line defined by <Latex>{"$L(P;A) = \\{P + tA \\}$"}</Latex>:</p>
-  <FormulaTable data={["$P = (p, q, r) \\ $ $ \\ A = (a, b, c)$"]} />
-  <FormulaTable data={[
+  <FormulaTable enableScroll data={[
+    "$P = (p, q, r) \\ $ $ \\ A = (a, b, c)$",
     "$L(P;A) = (p, q, r) + t(a, b, c)$",
     "$(x, y, z) = (p, q, r) + t(a, b, c)$",
     "$(x, y, z) = (p + ta, q + tb, r + tc)$, so",
-    "$x = p + ta$; $\\ y = q + tb$; $\\ z = q + tc$",
+    "$x = p + ta$, $y = q + tb$, $z = q + tc$",
   ]}
   />
   <p>If we use these equations <Latex>{"$x = p + ta$; $\\ y = q + tb$"}</Latex> in <Latex>{"$\\reals^2$"}</Latex>, we can solve for <Latex>{"$t$"}</Latex> in both</p>
@@ -90,13 +76,13 @@ const description = <div>
     "$= ab + (-ab) = 0$",
   ]}
   />
-  <p>This is valid for this context, but the important thing here is to know that <Latex>{"$N$"}</Latex> is the <b>normal vector</b> and it is orthogonal to <Latex>{"$A$"}</Latex>. Now, let's retake our previous cartesian equation <Latex>{"$b(x-p) - a(y-q) = 0$"}</Latex>. We got the conclusion that that equation represents a line. Well, let's check the following approach:</p>
+  <p><b>This is valid for this context</b>, but the important thing here is to know that <Latex>{"$N$"}</Latex> is the <b>normal vector</b> and it is orthogonal to <Latex>{"$A$"}</Latex>. Now, let's retake our previous cartesian equation <Latex>{"$b(x-p) - a(y-q) = 0$"}</Latex>. We got the conclusion that that equation represents a line. Well, let's check the following approach:</p>
   <FormulaTable data={[
     "$(X - P) \\cdot N = 0$",
   ]}
   />
   <p>This is <b>elegant</b>. As we could see <Latex>{"$X - P$"}</Latex> defines the direction vector. The new element is that <Latex>{"$N$"}</Latex> is orthogonal to that direction vector. If we analyze it, all values which satisfy the equation are the ones belong to the line because they have to be orthogonal to <Latex>{"$X - P$"}</Latex>. But if it is not enough for you we can solve this like this</p>
-  <FormulaTable data={[
+  <FormulaTable enableScroll data={[
     "$(X - P) \\cdot N = 0$",
     "$((x, y) - (p, q)) \\cdot (b, -a) = 0$",
     "$(x - p, y - q) \\cdot (b, -a) = 0$",
