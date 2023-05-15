@@ -62,8 +62,26 @@ const description = <div>
     <><Latex>{"$c(A \\times B) = (cA) \\times B$"}</Latex></>,
     <><Latex>{"$A \\cdot (A \\times B) = 0$"}</Latex></>,
     <><Latex>{"$B \\cdot (A \\times B) = 0$"}</Latex></>,
+    <><Latex>{"$(A \\times B) \\times C$ ≠ $A \\times (B \\times C)$"}</Latex></>,
+    <><Latex>{"$\\rVert A \\times B \\lVert^2 = \\rVert A \\lVert^2 \\rVert B \\lVert^2 - (A \\cdot B)^2 $"}</Latex></>,
   ]} />
-  {/* // TODO: Lagrange identity */}
+  <p>The last is named <a href="https://pythonandfamilywebsites-storage.s3.us-east-2.amazonaws.com/InkedIMG_20230515_112558-min.jpg" target='__blank'><b>Lagrange Identity</b></a> and it is important to note another property <Latex>{"$A \\times B = 0$"}</Latex> if <Latex>{"$A, B$"}</Latex> are <b>linearly dependant</b>. If we remember the Cauchy-Schwarz inequlity, the equal sign is valid if <Latex>{"$B = cA$"}</Latex>, so in that scenario we can replace</p>
+  <FormulaTable enableScroll data={[
+    "$\\lvert A \\cdot B \\lvert = \\lVert A \\rVert \\lVert B \\rVert$ in",
+    "$\\rVert A \\times B \\lVert^2 = \\rVert A \\lVert^2 \\rVert B \\lVert^2 - (A \\cdot B)^2 $",
+    "$\\rVert A \\times B \\lVert^2 = \\rVert A \\lVert^2 \\rVert B \\lVert^2 - (\\rVert A \\lVert \\rVert B \\lVert)^2 $",
+    "$\\rVert A \\times B \\lVert^2 = 0$ if",
+    "$A \\times B = 0$",
+  ]} />
+  <p>It means that if both vectors are scalar multiples of each other <Latex>{"$A \\times B = 0$"}</Latex> is telling us that they are linearly dependant. Also if we remember projections and angles we found that <Latex>{"$A \\cdot B = \\lVert A \\lVert \\lVert B \\lVert cos\\theta$"}</Latex>, so if we replace here:</p>
+  <FormulaTable enableScroll data={[
+    "$\\rVert A \\times B \\lVert^2 = \\lVert A \\lVert^2 \\lVert B \\lVert^2 - (\\lVert A \\lVert \\lVert B \\lVert cos\\theta)^2$",
+    "$\\rVert A \\times B \\lVert^2 = \\lVert A \\lVert^2 \\lVert B \\lVert^2 (1 - cos^2\\theta)$",
+    "$\\rVert A \\times B \\lVert^2 = \\lVert A \\lVert^2 \\lVert B \\lVert^2 sen^2\\theta$",
+    "$\\rVert A \\times B \\lVert = \\lVert A \\lVert \\lVert B \\lVert sen\\theta$",
+  ]} />
+  <hr />
+  Great! (this is taking us a lot of time). 
 </div>
 
 
