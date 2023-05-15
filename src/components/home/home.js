@@ -1,11 +1,10 @@
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Chip from '@mui/material/Chip';
 import COLORS from 'utils/colors';
+import CustomChip from 'styled/chip';
 
-
-const Home = ({ setOpen }) => {
+const Home = ({ subject, setOpen }) => {
   return (
     <Grid container p={5}>
       <Grid item xs={12}>
@@ -35,11 +34,12 @@ const Home = ({ setOpen }) => {
         <p>The Royal Society website says that the motto is "an expression of the determination of Fellows to withstand the domination of authority and to verify all statements by an appeal to facts determined by experiment.</p>
       </Grid>
       <Grid item xs={12} textAlign={"center"} mt={5}>
-        <Chip
+        <CustomChip
           label="I encourage you to explore this website!"
           sx={{ fontSize: "15pt", cursor: "pointer" }}
           color="primary"
           onClick={() => setOpen(true)}
+          subject={subject}
         />
       </Grid>
     </Grid>

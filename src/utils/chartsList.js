@@ -1,3 +1,5 @@
+import { MATH, STATS } from 'utils/const';
+
 const chartsList = [
   { listName: "Parallelogram law", module: "vectors1", route: "vectors-1", defaultComponent: true },
   { listName: "Cauchy-Schwarz inequalty", module: "vectors2", route: "vectors-2", defaultComponent: true },
@@ -9,4 +11,10 @@ const chartsList = [
   { listName: "Taylor polynomial", module: "taylorPolynomial", route: "taylor-polynomial", defaultComponent: true },
 ];
 
-export default chartsList;
+const chartsListStatistics = [
+];
+
+const repo = {}
+repo[MATH] = chartsList;
+repo[STATS] = chartsListStatistics;
+export default repo;

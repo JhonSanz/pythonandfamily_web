@@ -1,26 +1,34 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
-import chartsList from 'utils/chartsList';
+import repo from 'utils/chartsList';
 import { useNavigate } from "react-router-dom";
+import { MATH, STATS } from 'utils/const';
+import CustomToolbar from 'styled/toolbar';
+import CustomSelect from 'styled/select';
 
 const TemporaryDrawer = ({
-  state, setState
+  state, setState, subject, setSubject
 }) => {
   const navigate = useNavigate();
+  const handleChange = (event) => {
+    setSubject(event.target.value);
+    navigate("/");
+  };
   return (
     <Box>
       <Box>
         <AppBar position="static">
-          <Toolbar variant="dense">
+          <CustomToolbar subject={subject} variant="dense">
             <IconButton
               size="large"
               edge="start"
@@ -31,7 +39,19 @@ const TemporaryDrawer = ({
             >
               <MenuIcon />
             </IconButton>
-          </Toolbar>
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+              <CustomSelect
+                labelId="demo-select-small-label"
+                id="demo-select-small"
+                value={subject}
+                onChange={handleChange}
+                size='small'
+              >
+                <MenuItem value={MATH}>{MATH}</MenuItem>
+                <MenuItem value={STATS}>{STATS}</MenuItem>
+              </CustomSelect>
+            </FormControl>
+          </CustomToolbar>
         </AppBar>
       </Box>
       <Drawer
@@ -50,7 +70,7 @@ const TemporaryDrawer = ({
               </ListItemButton>
             </ListItem>
             {
-              chartsList.map((item) => (
+              repo[subject] !== undefined && repo[subject].map((item) => (
                 <ListItem key={item.listName} disablePadding>
                   <ListItemButton onClick={() => navigate(item.route)}>
                     <ListItemText primary={item.listName} />

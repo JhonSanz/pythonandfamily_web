@@ -5,9 +5,10 @@ import DetailedChart from 'components/detailedChart/detailedChart';
 import TemporaryDrawer from 'components/layout/mainLayout';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import chartsList from 'utils/chartsList';
+import repo from 'utils/chartsList';
 import CircularProgress from '@mui/material/CircularProgress';
 import Home from 'components/home/home';
+import { MATH } from 'utils/const';
 
 const DefaultChartComponent = ({
   module
@@ -51,17 +52,25 @@ const DefaultChartComponent = ({
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [subject, setSubject] = useState("");
+
+  useEffect(() => {
+    setSubject(MATH);
+  }, [])
 
   return (
     <>
-      <TemporaryDrawer state={open} setState={setOpen} />
+      <TemporaryDrawer
+        state={open} setState={setOpen}
+        subject={subject} setSubject={setSubject}
+      />
       <Routes>
         <Route
           path={"/"}
-          element={<Home setOpen={setOpen} />}
+          element={<Home subject={subject} setOpen={setOpen} />}
         />
         {
-          chartsList.map((chart) => {
+          repo[subject] !== undefined && repo[subject].map((chart) => {
             if (chart.defaultComponent) return (
               <Route
                 key={chart.route}
