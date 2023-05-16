@@ -81,7 +81,22 @@ const description = <div>
     "$\\rVert A \\times B \\lVert = \\lVert A \\lVert \\lVert B \\lVert sen\\theta$",
   ]} />
   <hr />
-  Great! (this is taking us a lot of time). 
+  <p>
+    Great! (this is taking us a lot of time 😂).  We learnt about the cross product, and now we know that it works as our normal vector. Let's see how can we define a plane using it. Similary with lines <Latex>{"$(X - P) \\cdot N = 0$"}</Latex> will define a plane in <Latex>{"$\\Reals^3$"}</Latex> because we follow the same idea, if <Latex>{"$X$ and $P$"}</Latex> are in the same plane their <Latex>{"$(X - P)$"}</Latex> will be too, and it will generate a vector from the origin which is orthogonal to <Latex>{"$N$"}</Latex>. In other words, all the points which satisfy the equation will be in the plane. So let's suppose:
+  </p>
+  <FormulaTable enableScroll data={[
+    "$N=(a,b,c)$, $P=(p,q,r)$, $X=(x,y,z)$",
+    "$(X - P) \\cdot N = 0$",
+    "$((x,y,z)-(p,q,r)) \\cdot (a,b,c) = 0$",
+    "$(x-p, y-q, z-r) \\cdot (a,b,c) = 0$",
+    "$a(x-p) + b(y-q) + c(z-r) = 0$",
+  ]} />
+  <p>But, it is also true that</p>
+  <FormulaTable enableScroll data={[
+    "$(X - P) \\cdot N = 0$",
+    "$X \\cdot N = P \\cdot N$",
+    "$ax + by + cz = d1$;  $d1 = pa + qb + rc$",
+  ]} />
 </div>
 
 
