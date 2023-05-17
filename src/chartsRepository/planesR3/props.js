@@ -71,6 +71,23 @@ const generateLinesSet = (P, A, B, V1, V2, V3, nullVector) => {
     generateLine(V1, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
     generateLine(V2, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
     generateLine(V3, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
+    generateLine(V3, P, 0, { cone: false, color: COLORS.green, name: '', dotted: true }),
+    generateLine(
+      {'x': -2, 'y': 2, 'z': 2}, P, 0,
+      { cone: true, color: COLORS.orange, name: '2N', dotted: false }
+    ),
+    generateLine(
+      {'x': 1, 'y': 0, 'z': 1}, P, 1,
+      { cone: false, color: COLORS.green, name: 'A+P', dotted: true }
+    ),
+    generateLine(
+      {'x': 1, 'y': 1, 'z': 0}, P, 1,
+      { cone: false, color: COLORS.green, name: 'B+P', dotted: true }
+    ),
+    generateLine(
+      {'x': 0, 'y': -1, 'z': 1}, P, 0,
+      { cone: false, color: COLORS.red, name: 'A-B', dotted: false }
+    ),
   ];
 }
 
@@ -80,6 +97,8 @@ const generatePointsSet = (P, A, V1, V2, V3) => {
     generatePoint(V1, A, 0, { color: COLORS.blue, name: '' }),
     generatePoint(V2, A, 0, { color: COLORS.blue, name: '' }),
     generatePoint(V3, A, 0, { color: COLORS.blue, name: '' }),
+    generatePoint({'x': 2, 'y': 2, 'z': 3}, A, 0, { color: COLORS.blue, name: '' }),
+    generatePoint({'x': 2, 'y': 3, 'z': 2}, A, 0, { color: COLORS.blue, name: '' }),
   ]
 }
 

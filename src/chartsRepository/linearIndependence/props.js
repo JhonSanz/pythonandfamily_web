@@ -6,9 +6,9 @@ import './linearIndependence.css';
 var Latex = require('react-latex');
 
 const lines = [
-  { x: [0, 1], y: [0, 0], z: [0, 0], cone: true, color: COLORS.orange, name: '', dotted: false },
-  { x: [0, 0], y: [0, 1], z: [0, 0], cone: true, color: COLORS.orange, name: '', dotted: false },
-  { x: [0, 0], y: [0, 0], z: [0, 1], cone: true, color: COLORS.orange, name: '', dotted: false },
+  { x: [0, 1], y: [0, 0], z: [0, 0], cone: true, color: COLORS.orange, name: 'i', dotted: false },
+  { x: [0, 0], y: [0, 1], z: [0, 0], cone: true, color: COLORS.orange, name: 'j', dotted: false },
+  { x: [0, 0], y: [0, 0], z: [0, 1], cone: true, color: COLORS.orange, name: 'k', dotted: false },
 ];
 
 const data = [
