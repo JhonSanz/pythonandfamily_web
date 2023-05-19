@@ -36,7 +36,7 @@ const description = <div>
   ]}
   />
   <p>With the constants <Latex>{"$c_1 = 0, c_2 = -3, c_3 = 1$"}</Latex> we generated the zero vector. It happened because in our set <Latex>{"$V_3$"}</Latex> is scalar product of <Latex>{"$V_2$"}</Latex>. So, these vectors are <b>linearly dependent</b>. If we can find the zero vector by multiple ways, it means that in our set there are vectors which are the scalar product of other ones. So, finally:</p>
-  <p><b>Definition</b>: A <Latex>{"$S$"}</Latex> which generates the zero vector with the trivial solution is named set of vectors <b>linearly independent</b>.</p>
+  <p><b>Definition</b>: A <Latex>{"$S$"}</Latex> set which generates the zero vector with the trivial solution is named set of vectors <b>linearly independent</b>.</p>
 </div>
 
 const miniDescription = <div>
