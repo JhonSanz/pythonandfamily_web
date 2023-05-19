@@ -7,7 +7,7 @@ const chartsList = [
   { listName: "Linear independence", module: "linearIndependence", route: "linear-independence", defaultComponent: true },
   { listName: "Lines in R³", module: "linesR3", route: "lines-r3", defaultComponent: true },
   { listName: "Planes in R³", module: "planesR3", route: "planes-r3", defaultComponent: true },
-  { listName: "Circular cone", module: "circularCone", route: "circular-cone", defaultComponent: true },
+  { listName: "Vector functions", module: "vectorFunctions", route: "vector-functions", defaultComponent: true },
   { listName: "Taylor polynomial", module: "taylorPolynomial", route: "taylor-polynomial", defaultComponent: true },
 ];
 
