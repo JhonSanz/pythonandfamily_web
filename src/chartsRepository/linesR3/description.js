@@ -99,7 +99,16 @@ const description = <div>
     />
   } />
   <br />
-  <p>Finally, the vector with minimum length is the vector which is the projection of <Latex>{"$P$ over $N$"}</Latex>. This is great because we could use all things we learnt previously.</p>
+  <p>Finally, the vector with minimum length is the vector which is the projection of <Latex>{"$P$ over $N$"}</Latex>. This is great because we could use all things we learnt previously. It generates a useful equation named distance from the origin to the line</p>
+  <FormulaTable enableScroll data={[
+    "$Proy_AB = \\frac {A \\cdot B}{ B \\cdot B}B $",
+    "$\\lVert Proy_AB \\rVert = \\lVert \\frac {A \\cdot B}{ B \\cdot B}B \\rVert$",
+    "$d = \\lvert \\frac {A \\cdot B}{ B \\cdot B} \\rvert \\lVert B \\rVert$",
+    "$d = \\frac {\\lvert A \\cdot B \\rvert}{ B \\cdot B}  \\lVert B \\rVert$",
+    "$d = \\frac {\\lvert A \\cdot B \\rvert}{\\lVert B \\rVert^2}  \\lVert B \\rVert$",
+    "$d = \\frac {\\lvert A \\cdot B \\rvert}{\\lVert B \\rVert}$",
+  ]}
+  />
 </div>
 
 

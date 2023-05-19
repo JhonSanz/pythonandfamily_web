@@ -85,18 +85,36 @@ const description = <div>
     Great! (this is taking us a lot of time 😂).  We learnt about the cross product, and now we know that it works as our normal vector. Let's see how can we define a plane using it. Similary with lines <Latex>{"$(X - P) \\cdot N = 0$"}</Latex> will define a plane in <Latex>{"$\\Reals^3$"}</Latex> because we follow the same idea, if <Latex>{"$X$ and $P$"}</Latex> are in the same plane their <Latex>{"$(X - P)$"}</Latex> will be too, and it will generate a vector from the origin which is orthogonal to <Latex>{"$N$"}</Latex>. In other words, all the points which satisfy the equation will be in the plane. So let's suppose:
   </p>
   <FormulaTable enableScroll data={[
-    "$N=(a,b,c)$, $P=(p,q,r)$, $X=(x,y,z)$",
+    "$N=(a,b,c)$, $X=(x,y,z)$, $P=(x_1,y_1,z_1)$",
     "$(X - P) \\cdot N = 0$",
-    "$((x,y,z)-(p,q,r)) \\cdot (a,b,c) = 0$",
-    "$(x-p, y-q, z-r) \\cdot (a,b,c) = 0$",
-    "$a(x-p) + b(y-q) + c(z-r) = 0$",
+    "$((x,y,z)-(x_1,y_1,z_1)) \\cdot (a,b,c) = 0$",
+    "$(x-x_1, y-y_1, z-z_1) \\cdot (a,b,c) = 0$",
+    "$a(x-x_1) + b(y-y_1) + c(z-z_1) = 0$",
   ]} />
   <p>But, it is also true that</p>
   <FormulaTable enableScroll data={[
     "$(X - P) \\cdot N = 0$",
     "$X \\cdot N = P \\cdot N$",
-    "$ax + by + cz = d1$;  $d1 = pa + qb + rc$",
+    "$ax + by + cz = d1$;  $d1 = ax_1 + by_1 + cz_1$",
   ]} />
+  <p>As we could conclude in Lines <Latex>{"$\\Reals^3$"}</Latex> section, we got an equation to calculate the distance from the origin to a plane <Latex>{"$d = \\frac {\\lvert P \\cdot N \\rvert}{\\lVert N \\rVert}$"}</Latex>. As we could see <Latex>{"$d1 = P \\cdot N$"}</Latex>, so <Latex>{"$d1 = d \\lVert N \\rVert$"}</Latex>. <Latex>{"$d1 = d$"}</Latex> if <Latex>{"$N = 1$"}</Latex>. The plane crosses through the origin if <Latex>{"$d1 = 0$"}</Latex></p>
+  <p><b>Example</b>: The cartesian equation <Latex>{"$2x + 6y + 3z = 6$"}</Latex> represents a plane with normal vector <Latex>{"$N = 2i + 6j + 3k$"}</Latex>.</p>
+  <p>Let's analice this statement. As we learnt previously <Latex>{"$X \\cdot N = P \\cdot N$"}</Latex>.</p>
+  <ul>
+    <li>
+      The first part matches with <Latex>{"$2x + 6y + 3z$"}</Latex>. That's the reason the statement says that the normal vector is <Latex>{"$2i + 6j + 3k$"}</Latex>
+    </li>
+    <li>
+      It means that the second part is <Latex>{"$P \\cdot N = 6$"}</Latex>
+    </li>
+  </ul>
+  <p>With that information we can use our equation to calculate the distance from the origin to the plane</p>
+  <FormulaTable enableScroll data={[
+    "$d = \\frac {\\lvert P \\cdot N \\rvert}{\\lVert N \\rVert}$",
+    "$d = \\frac{6}{\\lVert 2i + 6j + 3k \\rVert}$",
+    "$d = \\frac{6}{7}$",
+  ]} />
+  <p>Finally, we can get the plate interceptions with axes dividing the equation by <Latex>{"$P \\cdot N$"}</Latex>. In our example it will result in <Latex>{"$x/3 + y/1 + z/2 = 1$"}</Latex>, where <Latex>{"$(3,0,0)$, $(0,1,0)$ ,$(0,0,2)$"}</Latex> are the interceptions with the axes.</p>
 </div>
 
 
