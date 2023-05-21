@@ -19,20 +19,44 @@ for (i = 1; i < pointCount; i++) {
   c.push(i)
 }
 
+const generateIntegralTerm = (a, b) => {
+  return {
+    'type': 'scatter3d', 'mode': 'markers', 'text': "",
+    'textposition': 'middle left', 'showlegend': false,
+    'marker': {
+      'color': "red",
+    },
+    'x': [(b + (1 / 2 * b * b)) - (a + (1 / 2 * a * a))],
+    'y': [0],
+    'z': [(2 * b + (1 / 2 * b * b)) - (2 * a + (1 / 2 * a * a))],
+  }
+}
+
+const generateIntegralVector = () => {
+  const integrals = [];
+  for (let i = -2; i < 2;) {
+    integrals.push(generateIntegralTerm(0, i))
+    i += 0.05;
+  }
+  return integrals
+}
+
 const chartProps = {
-  data: [{
-    type: 'scatter3d',
-    mode: 'lines',
-    x: x,
-    y: y,
-    z: z,
-    opacity: 0.7,
-    line: {
-      width: 10,
-      color: c,
-      colorscale: 'Viridis'
-    }
-  }],
+  data: [
+    {
+      'type': 'scatter3d', 'mode': 'lines+text',
+      'textposition': 'middle left', 'showlegend': false,
+      'text': ["", ""],
+      x: [-1, 0, 10],
+      y: [0, 0, 0],
+      z: [0, 1, 11],
+      'line': {
+        'width': 6,
+        'dash': 'solid',
+      },
+    },
+    ...generateIntegralVector()
+  ],
   layout: {}
 }
 

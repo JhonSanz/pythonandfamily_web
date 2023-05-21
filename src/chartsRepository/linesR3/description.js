@@ -52,7 +52,7 @@ const description = <div>
     "$L(P;A) = (p, q, r) + t(a, b, c)$",
     "$(x, y, z) = (p, q, r) + t(a, b, c)$",
     "$(x, y, z) = (p + ta, q + tb, r + tc)$, so",
-    "$x = p + ta$, $y = q + tb$, $z = q + tc$",
+    "$x = p + ta$, $y = q + tb$, $z = r + tc$",
   ]}
   />
   <p>If we use these equations <Latex>{"$x = p + ta$; $\\ y = q + tb$"}</Latex> in <Latex>{"$\\reals^2$"}</Latex>, we can solve for <Latex>{"$t$"}</Latex> in both</p>
