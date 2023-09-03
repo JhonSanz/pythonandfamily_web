@@ -8,10 +8,10 @@ import { Routes, Route } from "react-router-dom";
 import repo from 'utils/chartsList';
 import CircularProgress from '@mui/material/CircularProgress';
 import Home from 'components/home/home';
-import { MATH } from 'utils/const';
+import { MATH, EN } from 'utils/const';
 
 const DefaultChartComponent = ({
-  module
+  module, language
 }) => {
   const [chartMiniDescription, setChartMiniDescription] = useState(undefined);
   const [chartDescription, setChartDescription] = useState(undefined);
@@ -20,7 +20,7 @@ const DefaultChartComponent = ({
 
   useEffect(() => {
     const importChartModule = async () => {
-      const { chartDescription, chartProps, chartMiniDescription } = await getDescriptionChart(module);
+      const { chartDescription, chartProps, chartMiniDescription } = await getDescriptionChart(module, language);
       setChartMiniDescription(chartMiniDescription);
       setChartDescription(chartDescription);
       setChartProps(chartProps);
@@ -53,6 +53,9 @@ const DefaultChartComponent = ({
 function App() {
   const [open, setOpen] = useState(false);
   const [subject, setSubject] = useState("");
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") === null ? EN : localStorage.getItem("language")
+  );
 
   useEffect(() => {
     setSubject(MATH);
@@ -63,11 +66,12 @@ function App() {
       <TemporaryDrawer
         state={open} setState={setOpen}
         subject={subject} setSubject={setSubject}
+        setLanguage={setLanguage}
       />
       <Routes>
         <Route
           path={"/"}
-          element={<Home subject={subject} setOpen={setOpen} />}
+          element={<Home subject={subject} setOpen={setOpen} language={language} />}
         />
         {
           repo[subject] !== undefined && repo[subject].map((chart) => {
@@ -75,7 +79,7 @@ function App() {
               <Route
                 key={chart.route}
                 path={chart.route}
-                element={<DefaultChartComponent module={chart.module} />}
+                element={<DefaultChartComponent module={chart.module} language={language} />}
               />
             )
             return <></>;
