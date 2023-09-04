@@ -1,53 +1,67 @@
+import FormulaTable from 'utils/formulaTable';
 var Latex = require('react-latex');
 
 const description = <div>
-  <p>Let's check two important operations we can perform with vectors, and one of the most used theorems.</p>
-  <p><b>Definition</b>: Given <Latex>{"$A, B$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>scalar/dot product</b> is</p>
+  <p>Veamos dos operaciones importantes que podemos realizar con vectores y uno de los teoremas más utilizados.</p>
+  <p><b>Definición</b>: Dados <Latex>{"$A, B$"}</Latex> en <Latex>{"$V_{n}$"}</Latex>, el <b>producto escalar/punto</b> es</p>
   <Latex>{"$A \\cdot B = \\displaystyle\\sum_1^k a_k b_k$"}</Latex>
-  <p><b>Definition</b>: Given <Latex>{"$A$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>vector norm</b> is</p>
-  <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> and we know that<br />
-  <Latex>{"$A \\cdot A = \\displaystyle\\sum_1^k a_k a_k = a_1^2 + a_2^2 + ... + a_k^2$"}</Latex> so we can replace <br />
-  <Latex>{"$\\lVert A \\rVert = \\sqrt{A \\cdot A}$"}</Latex>
-  <p>But, where <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> came from?, let's check our chart. If we assume that our vector exists only in the plane <Latex>{"$XY$"}</Latex>we could find its value with pitagoras' theorem.</p>
-  <Latex>{"$A_{xy} = \\sqrt{a_1^2 + a_2^2}$"}</Latex>
-  <p>Great, we found our value in the plane XY. Now we need to get it with our real vector. Notice that it has a component in <Latex>{"$Z$"}</Latex> axis. So we have to apply the pitagoras' theorem again.</p>
-  <Latex>{"$A = \\sqrt{A_{xy}^2 + a_3^2}$"}</Latex><br /><br />
-  <Latex>{"$A = \\sqrt{(\\sqrt{a_1^2 + a_2^2})^2 + a_3^2}$"}</Latex><br /><br />
-  <Latex>{"$A = \\sqrt{a_1^2 + a_2^2 + a_3^2}$"}</Latex> which is the expected result.<br /><hr />
-  <p>Those results are important to introduce the <b>Cauchy–Schwarz inequality</b>.</p>
-  <p>Imagine these two vectors <br /> <Latex>{"$A = (a_{1}, a_{2}, a_{n})$"}</Latex> y <Latex>{"$B = (b_{1}, b_{2}, b_{n})$"}</Latex></p>
-  <p>Let's think a litte. How can I ensure that both vectors are <b>in the same direction</b>?. Here we can use one of the vectors' properties. If we multiply by a constant <Latex>{"$X$"}</Latex> we are going to have a different vector in the same direction, as we can see in our chart. Let's imagine the next example:</p>
-  <Latex>{"$A = (8,8,10)$"}</Latex> if we multiple by <Latex>{"$1.5$"}</Latex> we will get <Latex>{"$B = 1.5(A) = (12,12,15)$"}</Latex><br />
+  <p><b>Definición</b>: Dado <Latex>{"$A$"}</Latex> en <Latex>{"$V_{n}$"}</Latex>, la <b>norma del vector</b> es</p>
+
+  <FormulaTable enableScroll data={[
+    "$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$ y",
+    "$A \\cdot A = \\displaystyle\\sum_1^k a_k a_k = a_1^2 + a_2^2 + ... + a_k^2$, por lo tanto,",
+    "$\\lVert A \\rVert = \\sqrt{A \\cdot A}$"
+  ]} />
+
+  <p>Pero, ¿de dónde proviene <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex>? Veamos nuestro gráfico. Si asumimos que nuestro vector existe solo en el plano <Latex>{"$XY$"}</Latex>, podemos encontrar su valor con el teorema de Pitágoras.</p>
+  <FormulaTable data={[
+    "$A_{xy} = \\sqrt{a_1^2 + a_2^2}$"
+  ]} />
+  <p>Genial, encontramos nuestro valor en el plano XY. Ahora necesitamos obtenerlo con nuestro vector real. Observa que tiene una componente en el eje <Latex>{"$Z$"}</Latex>. Así que tenemos que aplicar nuevamente el teorema de Pitágoras.</p>
+  <FormulaTable data={[
+    "$A = \\sqrt{A_{xy}^2 + a_3^2}$",
+    "$A = \\sqrt{(\\sqrt{a_1^2 + a_2^2})^2 + a_3^2}$",
+    "$A = \\sqrt{a_1^2 + a_2^2 + a_3^2}$, que es el resultado esperado."
+  ]} />
+  <hr />
+  <p>Estos resultados son importantes para introducir la <b>desigualdad de Cauchy-Schwarz</b>. Imagina estos dos vectores:</p>
+  <FormulaTable data={[
+    "$A = (a_{1}, a_{2}, a_{n})$ y $B = (b_{1}, b_{2}, b_{n})$"
+  ]} />
+  <p>Pensemos un poco. ¿Cómo puedo asegurarme de que ambos vectores están en la <b>misma dirección</b>? Aquí podemos usar una de las propiedades de los vectores. Si los multiplicamos por una constante <Latex>{"$X$"}</Latex>, obtendremos un vector diferente en la misma dirección, como podemos ver en nuestro gráfico. Imaginemos el siguiente ejemplo:</p>
+  <Latex>{"$A = (8,8,10)$"}</Latex>, si lo multiplicamos por <Latex>{"$1.5$"}</Latex>, obtendremos <Latex>{"$B = 1.5(A) = (12,12,15)$"}</Latex><br />
   <p>
-    It means that <Latex>{"$X$"}</Latex> is the difference between both values <Latex>{"$a_{n} X + b_{n} = 0$"}</Latex>, if we solve that equation we are going to get <Latex>{"$X = -1.5$"}</Latex> for each component in our vectors. <br />
-    <Latex>{"$\\displaystyle\\sum_1^k (a_kX + b_k) = 0$"}</Latex> will be true in this case because <Latex>{"$B = 1.5(A)$"}</Latex> and for every <Latex>{"$k$"}</Latex> we will get <Latex>{"$0$"}</Latex>.
+    Significa que <Latex>{"$X$"}</Latex> es la diferencia entre ambos valores <Latex>{"$a_{n} X + b_{n} = 0$"}</Latex>, si resolvemos esa ecuación, obtendremos <Latex>{"$X = -1.5$"}</Latex> para cada componente en nuestros vectores. <br />
+    <Latex>{"$\\displaystyle\\sum_1^k (a_kX + b_k) = 0$"}</Latex> será verdadero en este caso porque <Latex>{"$B = 1.5(A)$"}</Latex> y para cada <Latex>{"$k$"}</Latex> obtendremos <Latex>{"$0$"}</Latex>.
   </p>
-  <p>Now we want to add a greater than sign, and also we will relate <Latex>{"$A, B$"}</Latex> like this:</p>
-  <Latex>{"$\\displaystyle\\sum_1^k (a_kX + b_k)^2 \\geq 0^2$"}</Latex>and if we distribute our sum sign we get<br />
+  <p>Ahora queremos agregar un signo mayor que, y también relacionaremos <Latex>{"$A, B$"}</Latex> de la siguiente manera:</p>
+  <Latex>{"$\\displaystyle\\sum_1^k (a_kX + b_k)^2 \\geq 0^2$"}</Latex> y si distribuimos nuestro signo de suma, obtendremos<br />
   <Latex>{"$\\displaystyle\\sum_1^k (a_k^2X^2 + 2a_kb_k + b_k^2X^2) \\geq 0$"}</Latex><br />
-  <p>Let's rewrite like this <Latex>{"$AX^2+2BX+C \\geq 0$"}</Latex> where</p>
+  <p>Reescribamos esto como <Latex>{"$AX^2+2BX+C \\geq 0$"}</Latex>, donde</p>
   <p>
     <Latex>{"$ A = \\displaystyle\\sum_1^k a_k^2$"}</Latex>&nbsp;&nbsp;&nbsp;
     <Latex>{"$ B = \\displaystyle\\sum_1^k a_kb_k$"}</Latex>&nbsp;&nbsp;&nbsp;
     <Latex>{"$ C = \\displaystyle\\sum_1^k b_k^2$"}</Latex>
   </p>
-  <p>Our goal is to demonstrate that <Latex>{"$ B^2 \\leq AC$"}</Latex> so that</p>
-  <Latex>{"$AX^2 + 2BX + C = A(X + \\frac BA ) + \\frac {AC-B^2}{A}$"}</Latex> which gets minimun with <Latex>{"$ X = \\frac {-B}{A}$"}</Latex>, it supports the idea that it is not negative according to the inequality, so <br /><br />
-  <Latex>{"$A(\\frac {-B}{A})^2 + 2B(\\frac {-B}{A}) + C \\geq 0 $"}</Latex> solving here<br /><br />
-  <Latex>{"$B^2 \\leq AC $"}</Latex> As we wanted to demonstrate. And if we replace our values <Latex>{"$A, B, C $"}</Latex> we will get the <b>Cauchy–Schwarz inequality</b>.<br /><br />
+  <p>Nuestro objetivo es demostrar que <Latex>{"$ B^2 \\leq AC$"}</Latex>, por lo que</p>
+  <Latex>{"$AX^2 + 2BX + C = A(X + \\frac BA ) + \\frac {AC-B^2}{A}$"}</Latex> que se minimiza con <Latex>{"$ X = \\frac {-B}{A}$"}</Latex>, lo que respalda la idea de que no es negativo según la desigualdad, por lo que <br /><br />
+  <Latex>{"$A(\\frac {-B}{A})^2 + 2B(\\frac {-B}{A}) + C \\geq 0 $"}</Latex> resolviendo aquí<br /><br />
+  <Latex>{"$B^2 \\leq AC $"}</Latex>, como queríamos demostrar. Y si reemplazamos nuestros valores <Latex>{"$A, B, C $"}</Latex>, obtendremos la <b>desigualdad de Cauchy-Schwarz</b>.<br /><br />
   <Latex>{"$\\lvert A \\cdot B \\lvert \\leq \\lVert A \\rVert \\lVert B \\rVert$"}</Latex>
 
 </div>
 
 const miniDescription = <div>
-  <p>Let's check two important operations we can perform with vectors, and one of the most used theorems.</p>
-  <p><b>Definition</b>: Given <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>scalar/dot product</b> is</p>
+  <p>Veamos dos operaciones importantes que podemos realizar con vectores y uno de los teoremas más utilizados.</p>
+  <p><b>Definición</b>: Dados <Latex>{"$A, B$"}</Latex> en <Latex>{"$V_{n}$"}</Latex>, el <b>producto escalar/punto</b> es</p>
   <Latex>{"$A \\cdot B = \\displaystyle\\sum_1^k a_k b_k$"}</Latex>
-  <p><b>Definition</b>: Given <Latex>{"$A$"}</Latex> in <Latex>{"$V_{n}$"}</Latex> the <b>vector norm</b> is</p>
-  <Latex>{"$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$"}</Latex> and we know that<br />
-  <Latex>{"$A \\cdot A = \\displaystyle\\sum_1^k a_k a_k = a_1^2 + a_2^2 + ... + a_k^2$"}</Latex> so we can replace <br />
-  <Latex>{"$\\lVert A \\rVert = \\sqrt{A \\cdot A}$"}</Latex>
-  <p><b>Theorem</b>: Cauchy–Schwarz inequality</p>
+  <p><b>Definición</b>: Dado <Latex>{"$A$"}</Latex> en <Latex>{"$V_{n}$"}</Latex>, la <b>norma del vector</b> es</p>
+  <FormulaTable data={[
+    "$\\lVert A \\rVert = \\sqrt{a_1^2 + a_2^2 + ... + a_n^2}$ y",
+    "$A \\cdot A = \\displaystyle\\sum_1^k a_k a_k = a_1^2 + a_2^2 + ... + a_k^2$, por lo tanto,",
+    "$\\lVert A \\rVert = \\sqrt{A \\cdot A}$"
+  ]} />
+  <p><b>Teorema</b>: Desigualdad de Cauchy-Schwarz</p>
   <Latex>{"$\\lvert A \\cdot B \\lvert \\leq \\lVert A \\rVert \\lVert B \\rVert$"}</Latex>
 
 </div>
