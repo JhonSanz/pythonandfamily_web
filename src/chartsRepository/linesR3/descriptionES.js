@@ -25,63 +25,63 @@ const data_subchart = [
 
 const description = <div>
   <p>
-    <b>Definition</b>: Given <Latex>{"$P$ and $A$ in $R_n$"}</Latex>. The set of all points in <Latex>{"$P + tA$, $t \\in \\reals$"}</Latex> is a line which crosses through <Latex>{"$P$"}</Latex> and is parallel to <Latex>{"$A$"}</Latex>. We appoint it with <Latex>{"$L(P;A)$"}</Latex>.
+    <b>Definición</b>: Dados <Latex>{"$P$ y $A$ en $R_n$"}</Latex>. El conjunto de todos los puntos en <Latex>{"$P + tA$, $t \\in \\reals$"}</Latex> es una línea que pasa a través de <Latex>{"$P$"}</Latex> y es paralela a <Latex>{"$A$"}</Latex>. Lo designamos con <Latex>{"$L(P;A)$"}</Latex>.
   </p>
   <FormulaTable data={[
     "$L(P;A) = \\{P + tA | t \\in \\reals \\}$"
   ]}
   />
-  <p>Let's analyze some important considerations:</p>
+  <p>Analicemos algunas consideraciones importantes:</p>
   <ListConsiderations data={[
     <>
-      We can replace the direction vector with some vector <Latex>{"$B$"}</Latex>, where <Latex>{"$B = cA$"}</Latex>. Because it keeps the same direction of <Latex>{"$A$"}</Latex> due to the fact that they are parallel.
+      Podemos reemplazar el vector dirección con algún vector <Latex>{"$B$"}</Latex>, donde <Latex>{"$B = cA$"}</Latex>. Porque mantiene la misma dirección de <Latex>{"$A$"}</Latex> debido a que son paralelos.
     </>,
     <>
-      Two lines <Latex>{"$L(P;A)$"}</Latex> and <Latex>{"$L(P;B)$"}</Latex> which cross through the same point <Latex>{"$P$"}</Latex> are equal if the direction vectors <Latex>{"$A, B$"}</Latex> are parallel. If they were not parallel. We would get two different lines which cross through the same point but with <b>different slope</b>.
+      Dos líneas <Latex>{"$L(P;A)$"}</Latex> y <Latex>{"$L(P;B)$"}</Latex> que pasan por el mismo punto <Latex>{"$P$"}</Latex> son iguales si los vectores dirección <Latex>{"$A, B$"}</Latex> son paralelos. Si no fueran paralelos, obtendríamos dos líneas diferentes que pasan por el mismo punto pero con <b>pendientes diferentes</b>.
     </>,
     <>
-      Two lines <Latex>{"$L(P;A)$"}</Latex> and <Latex>{"$L(Q;A)$"}</Latex> with the same direction vector <Latex>{"$A$"}</Latex> are equal if <Latex>{"$Q \\in L(P;A)$"}</Latex>. It means that <Latex>{"$Q$"}</Latex> would keep the same position. We can check if <Latex>{"$Q \\in L(P;A)$"}</Latex> checking <Latex>{"$Q - P = cA$"}</Latex>, where <Latex>{"$c$"}</Latex> is some constant which means that <Latex>{"$Q - P$"}</Latex> is parallel to A.
+      Dos líneas <Latex>{"$L(P;A)$"}</Latex> y <Latex>{"$L(Q;A)$"}</Latex> con el mismo vector dirección <Latex>{"$A$"}</Latex> son iguales si <Latex>{"$Q \\in L(P;A)$"}</Latex>. Significa que <Latex>{"$Q$"}</Latex> mantendría la misma posición. Podemos comprobar si <Latex>{"$Q \\in L(P;A)$"}</Latex> verificando <Latex>{"$Q - P = cA$"}</Latex>, donde <Latex>{"$c$"}</Latex> es alguna constante que significa que <Latex>{"$Q - P$"}</Latex> es paralelo a <Latex>{"$A$"}</Latex>.
     </>,
     <>
-      Two different points generate a line. The line defined by <Latex>{"$\\{P + t(Q - P) \\}$"}</Latex> will contain both <Latex>{"$P, Q$"}</Latex>.
+      Dos puntos diferentes generan una línea. La línea definida por <Latex>{"$\\{P + t(Q - P) \\}$"}</Latex> contendrá tanto a <Latex>{"$P, Q$"}</Latex>.
     </>
   ]} />
-  <p>It is great to know that these reasonings are supported by the fact that <Latex>{"$A, B$"}</Latex> were <b>linearly dependent</b> if <Latex>{"$B = cA$"}</Latex>. Now let's check an example in <Latex>{"$\\reals^2$"}</Latex>. We will get the usual equations we learnt in the school, but we will also check some important consideration. Given <Latex>{"$P, A$ in $\\reals^3$"}</Latex> and a line defined by <Latex>{"$L(P;A) = \\{P + tA \\}$"}</Latex>:</p>
+  <p>Es genial saber que estos razonamientos están respaldados por el hecho de que <Latex>{"$A, B$"}</Latex> son <b>linealmente dependientes</b> si <Latex>{"$B = cA$"}</Latex>. Ahora veamos un ejemplo en <Latex>{"$\\reals^2$"}</Latex>. Obtendremos las ecuaciones habituales que aprendimos en la escuela, pero también veremos algunas consideraciones importantes. Dados <Latex>{"$P, A$ en $\\reals^3$"}</Latex> y una línea definida por <Latex>{"$L(P;A) = \\{P + tA \\}$"}</Latex>:</p>
   <FormulaTable enableScroll data={[
     "$P = (p, q, r) \\ $ $ \\ A = (a, b, c)$",
     "$L(P;A) = (p, q, r) + t(a, b, c)$",
     "$(x, y, z) = (p, q, r) + t(a, b, c)$",
-    "$(x, y, z) = (p + ta, q + tb, r + tc)$, so",
+    "$(x, y, z) = (p + ta, q + tb, r + tc)$, entonces",
     "$x = p + ta$, $y = q + tb$, $z = r + tc$",
   ]}
   />
-  <p>If we use these equations <Latex>{"$x = p + ta$; $\\ y = q + tb$"}</Latex> in <Latex>{"$\\reals^2$"}</Latex>, we can solve for <Latex>{"$t$"}</Latex> in both</p>
+  <p>Si usamos estas ecuaciones <Latex>{"$x = p + ta$; $\\ y = q + tb$"}</Latex> en <Latex>{"$\\reals^2$"}</Latex>, podemos resolver para <Latex>{"$t$"}</Latex> en ambas:</p>
   <FormulaTable data={[
     "$\\frac{(x-p)}{a} = \\frac{(y-q)}{b}$",
     "$b(x-p) = a(y-q)$",
     "$(y-q) = \\frac{b}{a}(x-p)$",
   ]}
   />
-  <p>Next, remember that <Latex>{"$a, b$"}</Latex> are components of <Latex>{"$A$"}</Latex>, but what would happen if I don't know <Latex>{"$A$"}</Latex>? we can generate our line with two points <Latex>{"$P, Q$"}</Latex> like we saw previously. So, <Latex>{"$\\frac{b}{a}$"}</Latex> will change and if we have <Latex>{"$a = x_2 - x_1$"}</Latex> and <Latex>{"$b = y_2 - y_1$"}</Latex>, assuming that <Latex>{"$x_2, y_2$"}</Latex> belong to <Latex>{"$Q$"}</Latex>, we will get:</p>
+  <p>Luego, recuerda que <Latex>{"$a, b$"}</Latex> son componentes de <Latex>{"$A$"}</Latex>, pero ¿qué sucedería si no conociéramos <Latex>{"$A$"}</Latex>? Podemos generar nuestra línea con dos puntos <Latex>{"$P, Q$"}</Latex>, como vimos anteriormente. Así que, <Latex>{"$\\frac{b}{a}$"}</Latex> cambiará y si tenemos <Latex>{"$a = x_2 - x_1$"}</Latex> y <Latex>{"$b = y_2 - y_1$"}</Latex>, asumiendo que <Latex>{"$x_2, y_2$"}</Latex> pertenecen a <Latex>{"$Q$"}</Latex>, obtendremos:</p>
   <FormulaTable data={[
     "$(y-q) = \\frac{(y_2 - y_1)}{(x_2 - x_1)}(x-p)$",
     "$m = \\frac{(y_2 - y_1)}{(x_2 - x_1)}$",
   ]}
   />
-  <p>Which is the equation that we all know. But, it has something special <Latex>{"$x_2 - x_1 $ ≠ $ 0$"}</Latex>. However, if we analyze it as vectors we don't have to <b>face that restriction</b>, that is interesting because it appears when we use the cartesian representation.</p>
+  <p>Lo cual es la ecuación que todos conocemos. Pero, tiene algo especial <Latex>{"$x_2 - x_1 $ ≠ $ 0$"}</Latex>. Sin embargo, si lo analizamos como vectores, no tenemos que enfrentar esa restricción, lo cual es interesante porque aparece cuando usamos la representación cartesiana.</p>
   <hr />
-  <p>Finally, let's introduce another important concept. We learnt that two vectors which are orthogonal have their internal product <Latex>{"$= 0$"}</Latex>. Given some vector <Latex>{"$A = (a, b)$"}</Latex>, we can create a vector <Latex>{"$N = (b, -a)$"}</Latex>, which can make</p>
+  <p>Finalmente, introduzcamos otro concepto importante. Aprendimos que dos vectores que son ortogonales tienen su producto interno <Latex>{"$= 0$"}</Latex>. Dado algún vector <Latex>{"$A = (a, b)$"}</Latex>, podemos crear un vector <Latex>{"$N = (b, -a)$"}</Latex>, lo que puede hacer</p>
   <FormulaTable data={[
     "$A \\cdot N = (a, b) \\cdot (b, -a)$",
     "$= ab + (-ab) = 0$",
   ]}
   />
-  <p><b>This is valid for this context</b>, but the important thing here is to know that <Latex>{"$N$"}</Latex> is the <b>normal vector</b> and it is orthogonal to <Latex>{"$A$"}</Latex>. Now, let's retake our previous cartesian equation <Latex>{"$b(x-p) - a(y-q) = 0$"}</Latex>. We got the conclusion that that equation represents a line. Well, let's check the following approach:</p>
+  <p><b>Esto es válido para este contexto</b>, pero lo importante aquí es saber que <Latex>{"$N$"}</Latex> es el <b>vector normal</b> y es ortogonal a <Latex>{"$A$"}</Latex>. Ahora, retomemos nuestra ecuación cartesiana anterior <Latex>{"$b(x-p) - a(y-q) = 0$"}</Latex>. Obtenemos la conclusión de que esa ecuación representa una línea. Bueno, veamos el siguiente enfoque:</p>
   <FormulaTable data={[
     "$(X - P) \\cdot N = 0$",
   ]}
   />
-  <p>This is <b>elegant</b>. As we could see <Latex>{"$X - P$"}</Latex> defines the direction vector. The new element is that <Latex>{"$N$"}</Latex> is orthogonal to that direction vector. If we analyze it, all values which satisfy the equation are the ones belong to the line because they have to be orthogonal to <Latex>{"$X - P$"}</Latex>. But if it is not enough for you we can solve this like this</p>
+  <p>Esto es <b>elegante</b>. Como pudimos ver, <Latex>{"$X - P$"}</Latex> define el vector dirección. El nuevo elemento es que <Latex>{"$N$"}</Latex> es ortogonal a ese vector dirección. Si lo analizamos, todos los valores que satisfacen la ecuación son los que pertenecen a la línea porque deben ser ortogonales a <Latex>{"$X - P$"}</Latex>. Pero si eso no es suficiente, podemos resolver esto de la siguiente manera:</p>
   <FormulaTable enableScroll data={[
     "$(X - P) \\cdot N = 0$",
     "$((x, y) - (p, q)) \\cdot (b, -a) = 0$",
@@ -89,7 +89,7 @@ const description = <div>
     "$b(x - p) - a(y - q) = 0$",
   ]}
   />
-  <p>Beautiful huh? yes! we got the cartesian equation. This is a good schema of our example.</p>
+  <p>¿Hermoso, verdad? ¡Sí! obtuvimos la ecuación cartesiana. Este es un buen esquema de nuestro ejemplo.</p>
   <ModalChart chart={
     <Plot
       data={data_subchart}
@@ -99,7 +99,7 @@ const description = <div>
     />
   } />
   <br />
-  <p>Finally, the vector with minimum length is the vector which is the projection of <Latex>{"$P$ over $N$"}</Latex>. This is great because we could use all things we learnt previously. It generates a useful equation named distance from the origin to the line</p>
+  <p>Finalmente, el vector con la longitud mínima hasta la recta es el vector que es la proyección de <Latex>{"$P$ sobre $N$"}</Latex>. Esto es genial porque podríamos usar todas las cosas que aprendimos anteriormente. Genera una ecuación útil llamada distancia desde el origen hasta la línea</p>
   <FormulaTable enableScroll data={[
     "$Proy_AB = \\frac {A \\cdot B}{ B \\cdot B}B $",
     "$\\lVert Proy_AB \\rVert = \\lVert \\frac {A \\cdot B}{ B \\cdot B}B \\rVert$",
@@ -109,12 +109,12 @@ const description = <div>
     "$d = \\frac {\\lvert A \\cdot B \\rvert}{\\lVert B \\rVert}$",
   ]}
   />
-</div>
-
+</div>;
 
 const miniDescription = <div>
-  <p>Lines are an interesting combination of vectors properties. A line is defined by a point <Latex>{"$P$"}</Latex> and a vector <Latex>{"$A$"}</Latex>, both in <Latex>{"$R_n$"}</Latex>. Where <Latex>{"$A$"}</Latex> is named <b>direction vector</b> and <Latex>{"$P$"}</Latex> is the initial point of the line. With these elements you can generate a line with <Latex>{"$L(P;A) = \\{P + tA | t \\in \\reals \\}$"}</Latex>. In other words, if you sum  <Latex>{"$P$"}</Latex> with the <b>linear span</b> of <Latex>{"$A$"}</Latex> you can generate a line.</p>
-  <p>Our chart is pretty explicit with the fact that <b>a line is a infinite set of points</b> in <Latex>{"$R_n$"}</Latex>, which follow the same direction. It means if you change the direction of <Latex>{"$A$"}</Latex> the line will change its <b>slope</b>. And, if you change <Latex>{"$P$"}</Latex> the line will change its <b>position</b>. </p>
-</div>
+  <p>Las líneas son una interesante combinación de propiedades de vectores. Una línea está definida por un punto <Latex>{"$P$"}</Latex> y un vector <Latex>{"$A$"}</Latex>, ambos en <Latex>{"$R_n$"}</Latex>. Donde <Latex>{"$A$"}</Latex> se denomina <b>vector dirección</b> y <Latex>{"$P$"}</Latex> es el punto inicial de la línea. Con estos elementos, puedes generar una línea con <Latex>{"$L(P;A) = \\{P + tA | t \\in \\reals \\}$"}</Latex>. En otras palabras, si sumas <Latex>{"$P$"}</Latex> con la <b>envolvente lineal</b> de <Latex>{"$A$"}</Latex>, puedes generar una línea.</p>
+  <p>Nuestra gráfica es bastante explícita con el hecho de que <b>una línea es un conjunto infinito de puntos</b> en <Latex>{"$R_n$"}</Latex>, que siguen la misma dirección. Esto significa que si cambias la dirección de <Latex>{"$A$"}</Latex>, la línea cambiará su <b>pendiente</b>. Y si cambias <Latex>{"$P$"}</Latex>, la línea cambiará su <b>posición</b>.</p>
+</div>;
+
 
 export { description, miniDescription };
