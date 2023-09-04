@@ -61,7 +61,7 @@ const description = <div>
   <FormulaTable data={[
     "$p^{(1)}(x) = 0 + c_1 + 2c_2x + 3c_3x^2 + ...$",
     "$p^{(2)}(x) = 0 + 0 + 2c_2 + 6c_3x + ...$",
-    "$p^{(4)}(x) = 0 + 0 + 0 + 6c_3 + ...$",
+    "$p^{(3)}(x) = 0 + 0 + 0 + 6c_3 + ...$",
   ]} />
   <p>And if we evaluate them in <Latex>{"$x = 0$"}</Latex> we will get</p>
   <FormulaTable data={[
@@ -81,7 +81,7 @@ const description = <div>
   ]} />
   <p>Let's use it to generate our example with <Latex>{"$e^x$"}</Latex>:</p>
   <FormulaTable data={[
-    "$T_n(e^x) = \\displaystyle\\sum_0^k \\frac {e^0 x^k}{k!} = 1 + \\frac{x^2}{2!} + ... $"
+    "$T_n(e^x) = \\displaystyle\\sum_0^k \\frac {e^{(k)}(0) x^k}{k!} = 1 + \\frac{x^2}{2!} + ... $"
   ]}/>
 </div>
 
