@@ -31,16 +31,16 @@ const generateIntegralTerm = (x, y, color) => {
   }
 }
 
-const generateIntegralVector = (init) => {
-  const x = [];
-  const y = [];
-  for (let i = init; i <= 2.05;) {
-    x.push((i + (1 / 2 * i * i)) - (init + (1 / 2 * init * init)))
-    y.push((2 * i + (1 / 2 * i * i)) - (2 * init + (1 / 2 * init * init)))
-    i += 0.05;
-  }
-  return generateIntegralTerm(x, y, "black")
-}
+// const generateIntegralVector = (init) => {
+//   const x = [];
+//   const y = [];
+//   for (let i = init; i <= 2.05;) {
+//     x.push((i + (1 / 2 * i * i)) - (init + (1 / 2 * init * init)))
+//     y.push((2 * i + (1 / 2 * i * i)) - (2 * init + (1 / 2 * init * init)))
+//     i += 0.05;
+//   }
+//   return generateIntegralTerm(x, y, "black")
+// }
 
 const generateIntegralVectorV2 = (init) => {
   const x = [];

@@ -1,4 +1,3 @@
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/material/styles';
 import COLORS from 'utils/colors';
